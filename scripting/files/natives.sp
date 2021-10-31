@@ -1,451 +1,561 @@
 public void CreateNatives()
 {
-    CreateNative("eItems_GetWeaponCount", Native_GetWeaponCount);
-    CreateNative("eItems_GetPaintsCount", Native_GetPaintsCount);
-    CreateNative("eItems_GetGlovesCount", Native_GetGlovesCount);
-    
+	CreateNative("eItems_GetWeaponCount", Native_GetWeaponCount);
+	CreateNative("eItems_GetPaintsCount", Native_GetPaintsCount);
+	CreateNative("eItems_GetGlovesCount", Native_GetGlovesCount);
+	CreateNative("eItems_GetMusicKitsCount", Native_GetMusicKitsCount);
+	CreateNative("eItems_GetPinsCount", Native_GetPinsCount);
+	CreateNative("eItems_GetCoinsCount", Native_GetCoinsCount);
+	CreateNative("eItems_GetCoinsSetsCount", Native_GetCoinsSetsCount);
+	CreateNative("eItems_GetStickersCount", Native_GetStickersCount);
+	CreateNative("eItems_GetStickersSetsCount", Native_GetStickersSetsCount);
 
 
-    CreateNative("eItems_AreItemsSynced", Native_AreItemsSynced);
-    CreateNative("eItems_AreItemsSyncing", Native_AreItemsSyncing);
-    CreateNative("eItems_ReSync", Native_ReSync);
-    
-    
+	CreateNative("eItems_AreItemsSynced", Native_AreItemsSynced);
+	CreateNative("eItems_AreItemsSyncing", Native_AreItemsSyncing);
+	CreateNative("eItems_ReSync", Native_ReSync);
+	
+	
 
-    /*              Weapons             */
+	/*              Weapons             */
 
-    //Generic
-    CreateNative("eItems_GetWeaponNumByDefIndex", Native_GetWeaponNumByDefIndex);
-    CreateNative("eItems_GetWeaponNumByClassName", Native_GetWeaponNumByClassName);
-    CreateNative("eItems_GetWeaponNumByWeapon", Native_GetWeaponNumByWeapon);
-    CreateNative("eItems_GetWeaponDefIndexByWeaponNum", Native_GetWeaponDefIndexByWeaponNum);
-    CreateNative("eItems_GetWeaponDefIndexByClassName", Native_GetWeaponDefIndexByClassName);
-    CreateNative("eItems_IsDefIndexKnife", Native_IsDefIndexKnife);
-    CreateNative("eItems_GetWeaponDefIndexByWeapon", Native_GetWeaponDefIndexByWeapon);
-    CreateNative("eItems_GetActiveWeaponNum", Native_GetActiveWeaponNum);
-    CreateNative("eItems_GetActiveWeaponDefIndex", Native_GetActiveWeaponDefIndex);
-    CreateNative("eItems_GetActiveWeapon", Native_GetActiveWeapon);
-    CreateNative("eItems_GetActiveWeaponClassName", Native_GetActiveWeaponClassName);
-    CreateNative("eItems_IsSkinnableDefIndex", Native_IsSkinnableDefIndex);
-    CreateNative("eItems_FindWeaponByWeaponNum", Native_FindWeaponByWeaponNum);
-    CreateNative("eItems_FindWeaponByDefIndex", Native_FindWeaponByDefIndex);
-    CreateNative("eItems_FindWeaponByClassName", Native_FindWeaponByClassName);
-    CreateNative("eItems_RefillClipAmmo", Native_RefillClipAmmo);
-    CreateNative("eItems_RefillReserveAmmo", Native_RefillReserveAmmo);
-    CreateNative("eItems_IsValidWeapon", Native_IsValidWeapon);
-    CreateNative("eItems_GiveWeapon", Native_GiveWeapon);
-    CreateNative("eItems_RemoveKnife", Native_RemoveKnife);
-    CreateNative("eItems_RemoveWeapon", Native_RemoveWeapon);
-    CreateNative("eItems_RespawnWeapon", Native_RespawnWeapon);
-    CreateNative("eItems_RespawnWeaponBySlot", Native_RespawnWeaponBySlot);
-    CreateNative("eItems_RemoveAllWeapons", Native_RemoveAllWeapons);
-    CreateNative("eItems_SetWeaponAmmo", Native_SetWeaponAmmo);
-    CreateNative("eItems_SetAllWeaponsAmmo", Native_SetAllWeaponsAmmo);
-    CreateNative("eItems_SetAllWeaponsAmmoByClassName", Native_SetAllWeaponsAmmoByClassName);
-    CreateNative("eItems_SetActiveWeapon", Native_SetActiveWeapon);
-    CreateNative("eItems_DropWeapon", Native_DropWeapon);
-    //ClassNames
-    CreateNative("eItems_GetWeaponClassNameByWeaponNum", Native_GetWeaponClassNameByWeaponNum);
-    CreateNative("eItems_GetWeaponClassNameByDefIndex", Native_GetWeaponClassNameByDefIndex);
-    CreateNative("eItems_GetWeaponClassNameByWeapon", Native_GetWeaponClassNameByWeapon);
-    //DisplayNames
-    CreateNative("eItems_GetWeaponDisplayNameByWeaponNum", Native_GetWeaponDisplayNameByWeaponNum);
-    CreateNative("eItems_GetWeaponDisplayNameByDefIndex", Native_GetWeaponDisplayNameByDefIndex);
-    CreateNative("eItems_GetWeaponDisplayNameByClassName", Native_GetWeaponDisplayNameByClassName);
-    CreateNative("eItems_GetWeaponDisplayNameByWeapon", Native_GetWeaponDisplayNameByWeapon);
-    //ViewModels
-    CreateNative("eItems_GetWeaponViewModelByWeaponNum", Native_GetWeaponViewModelByWeaponNum);
-    CreateNative("eItems_GetWeaponViewModelByDefIndex", Native_GetWeaponViewModelByDefIndex);
-    CreateNative("eItems_GetWeaponViewModelByWeapon", Native_GetWeaponViewModelByWeapon);
-    CreateNative("eItems_GetWeaponViewModelByClassName", Native_GetWeaponViewModelByClassName);
-    //WorldModels
-    CreateNative("eItems_GetWeaponWorldModelByWeaponNum", Native_GetWeaponWorldModelByWeaponNum);
-    CreateNative("eItems_GetWeaponWorldModelByDefIndex", Native_GetWeaponWorldModelByDefIndex);
-    CreateNative("eItems_GetWeaponWorldModelByWeapon", Native_GetWeaponWorldModelByWeapon);
-    CreateNative("eItems_GetWeaponWorldModelByClassName", Native_GetWeaponWorldModelByClassName);
-    //Weapon Slot
-    CreateNative("eItems_GetWeaponSlotByWeaponNum", Native_GetWeaponSlotByWeaponNum);
-    CreateNative("eItems_GetWeaponSlotByDefIndex", Native_GetWeaponSlotByDefIndex);
-    CreateNative("eItems_GetWeaponSlotByWeapon", Native_GetWeaponSlotByWeapon);
-    CreateNative("eItems_GetWeaponSlotByClassName", Native_GetWeaponSlotByClassName);
-    //Weapon Team
-    CreateNative("eItems_GetWeaponTeamByWeaponNum", Native_GetWeaponTeamByWeaponNum);
-    CreateNative("eItems_GetWeaponTeamByDefIndex", Native_GetWeaponTeamByDefIndex);
-    CreateNative("eItems_GetWeaponTeamByWeapon", Native_GetWeaponTeamByWeapon);
-    CreateNative("eItems_GetWeaponTeamByClassName", Native_GetWeaponTeamByClassName);
-    //Clip Ammo
-    CreateNative("eItems_GetWeaponClipAmmoByWeaponNum", Native_GetWeaponClipAmmoByWeaponNum);
-    CreateNative("eItems_GetWeaponClipAmmoByDefIndex", Native_GetWeaponClipAmmoByDefIndex);
-    CreateNative("eItems_GetWeaponClipAmmoByWeapon", Native_GetWeaponClipAmmoByWeapon);
-    CreateNative("eItems_GetWeaponClipAmmoByClassName", Native_GetWeaponClipAmmoByClassName);
-    //Reserve Ammo
-    CreateNative("eItems_GetWeaponReserveAmmoByWeaponNum", Native_GetWeaponReserveAmmoByWeaponNum);
-    CreateNative("eItems_GetWeaponReserveAmmoByDefIndex", Native_GetWeaponReserveAmmoByDefIndex);
-    CreateNative("eItems_GetWeaponReserveAmmoByWeapon", Native_GetWeaponReserveAmmoByWeapon);
-    CreateNative("eItems_GetWeaponReserveAmmoByClassName", Native_GetWeaponReserveAmmoByClassName);
-    //Price
-    CreateNative("eItems_GetWeaponPriceByWeaponNum", Native_GetWeaponPriceByWeaponNum);
-    CreateNative("eItems_GetWeaponPriceByDefIndex", Native_GetWeaponPriceByDefIndex);
-    CreateNative("eItems_GetWeaponPriceByWeapon", Native_GetWeaponPriceByWeapon);
-    CreateNative("eItems_GetWeaponPriceByClassName", Native_GetWeaponPriceByClassName);
-    //Max Player Speed
-    CreateNative("eItems_GetWeaponMaxPlayerSpeedByWeaponNum", Native_GetWeaponMaxPlayerSpeedByWeaponNum);
-    CreateNative("eItems_GetWeaponMaxPlayerSpeedByDefIndex", Native_GetWeaponMaxPlayerSpeedByDefIndex);
-    CreateNative("eItems_GetWeaponMaxPlayerSpeedByWeapon", Native_GetWeaponMaxPlayerSpeedByWeapon);
-    CreateNative("eItems_GetWeaponMaxPlayerSpeedByClassName", Native_GetWeaponMaxPlayerSpeedByClassName);
-    //Damage
-    CreateNative("eItems_GetWeaponDamageByWeaponNum", Native_GetWeaponDamageByWeaponNum);
-    CreateNative("eItems_GetWeaponDamageByDefIndex", Native_GetWeaponDamageByDefIndex);
-    CreateNative("eItems_GetWeaponDamageByWeapon", Native_GetWeaponDamageByWeapon);
-    CreateNative("eItems_GetWeaponDamageByClassName", Native_GetWeaponDamageByClassName);
-    //Is Full Auto
-    CreateNative("eItems_IsWeaponFullAutoByWeaponNum", Native_IsWeaponFullAutoByWeaponNum);
-    CreateNative("eItems_IsWeaponFullAutoByDefIndex", Native_IsWeaponFullAutoByDefIndex);
-    CreateNative("eItems_IsWeaponFullAutoByWeapon", Native_IsWeaponFullAutoByWeapon);
-    CreateNative("eItems_IsWeaponFullAutoByClassName", Native_IsWeaponFullAutoByClassName);
-    //Spread
-    CreateNative("eItems_GetWeaponSpreadByWeaponNum", Native_GetWeaponSpreadByWeaponNum);
-    CreateNative("eItems_GetWeaponSpreadByDefIndex", Native_GetWeaponSpreadByDefIndex);
-    CreateNative("eItems_GetWeaponSpreadByWeapon", Native_GetWeaponSpreadByWeapon);
-    CreateNative("eItems_GetWeaponSpreadByClassName", Native_GetWeaponSpreadByClassName);
-    //Cycle Time
-    CreateNative("eItems_GetWeaponCycleTimeByWeaponNum", Native_GetWeaponCycleTimeByWeaponNum);
-    CreateNative("eItems_GetWeaponCycleTimeByDefIndex", Native_GetWeaponCycleTimeByDefIndex);
-    CreateNative("eItems_GetWeaponCycleTimeByWeapon", Native_GetWeaponCycleTimeByWeapon);
-    CreateNative("eItems_GetWeaponCycleTimeByClassName", Native_GetWeaponCycleTimeByClassName);
+	//Generic
+	CreateNative("eItems_GetWeaponNumByDefIndex", Native_GetWeaponNumByDefIndex);
+	CreateNative("eItems_GetWeaponNumByClassName", Native_GetWeaponNumByClassName);
+	CreateNative("eItems_GetWeaponNumByWeapon", Native_GetWeaponNumByWeapon);
+	CreateNative("eItems_GetWeaponDefIndexByWeaponNum", Native_GetWeaponDefIndexByWeaponNum);
+	CreateNative("eItems_GetWeaponDefIndexByClassName", Native_GetWeaponDefIndexByClassName);
+	CreateNative("eItems_IsDefIndexKnife", Native_IsDefIndexKnife);
+	CreateNative("eItems_GetWeaponDefIndexByWeapon", Native_GetWeaponDefIndexByWeapon);
+	CreateNative("eItems_GetActiveWeaponNum", Native_GetActiveWeaponNum);
+	CreateNative("eItems_GetActiveWeaponDefIndex", Native_GetActiveWeaponDefIndex);
+	CreateNative("eItems_GetActiveWeapon", Native_GetActiveWeapon);
+	CreateNative("eItems_GetActiveWeaponClassName", Native_GetActiveWeaponClassName);
+	CreateNative("eItems_IsSkinnableDefIndex", Native_IsSkinnableDefIndex);
+	CreateNative("eItems_FindWeaponByWeaponNum", Native_FindWeaponByWeaponNum);
+	CreateNative("eItems_FindWeaponByDefIndex", Native_FindWeaponByDefIndex);
+	CreateNative("eItems_FindWeaponByClassName", Native_FindWeaponByClassName);
+	CreateNative("eItems_RefillClipAmmo", Native_RefillClipAmmo);
+	CreateNative("eItems_RefillReserveAmmo", Native_RefillReserveAmmo);
+	CreateNative("eItems_IsValidWeapon", Native_IsValidWeapon);
+	CreateNative("eItems_GiveWeapon", Native_GiveWeapon);
+	CreateNative("eItems_RemoveKnife", Native_RemoveKnife);
+	CreateNative("eItems_RemoveWeapon", Native_RemoveWeapon);
+	CreateNative("eItems_RespawnWeapon", Native_RespawnWeapon);
+	CreateNative("eItems_RespawnWeaponBySlot", Native_RespawnWeaponBySlot);
+	CreateNative("eItems_RemoveAllWeapons", Native_RemoveAllWeapons);
+	CreateNative("eItems_SetWeaponAmmo", Native_SetWeaponAmmo);
+	CreateNative("eItems_SetAllWeaponsAmmo", Native_SetAllWeaponsAmmo);
+	CreateNative("eItems_SetAllWeaponsAmmoByClassName", Native_SetAllWeaponsAmmoByClassName);
+	CreateNative("eItems_SetActiveWeapon", Native_SetActiveWeapon);
+	CreateNative("eItems_DropWeapon", Native_DropWeapon);
+	CreateNative("eItems_HasRareInspectByDefIndex", Native_HasRareInspectByDefIndex);
+	CreateNative("eItems_HasRareDrawByDefIndex", Native_HasRareDrawByDefIndex);
+	CreateNative("eItems_GetRareInspectSequenceByDefIndex", Native_GetRareInspectSequenceByDefIndex);
+	CreateNative("eItems_GetRareDrawSequenceByDefIndex", Native_GetRareDrawSequenceByDefIndex);
 
-    /*              Skins             */
 
-    CreateNative("eItems_IsSkinNumGloveApplicable", Native_IsSkinNumGloveApplicable);
-    CreateNative("eItems_GetSkinNumByDefIndex", Native_GetSkinNumByDefIndex);
-    CreateNative("eItems_GetSkinDefIndexBySkinNum", Native_GetSkinDefIndexBySkinNum);
-    CreateNative("eItems_GetSkinDisplayNameByDefIndex", Native_GetSkinDisplayNameByDefIndex);
-    CreateNative("eItems_GetSkinDisplayNameBySkinNum", Native_GetSkinDisplayNameBySkinNum);
-    CreateNative("eItems_IsNativeSkin", Native_IsNativeSkin);
+	//ClassNames
+	CreateNative("eItems_GetWeaponClassNameByWeaponNum", Native_GetWeaponClassNameByWeaponNum);
+	CreateNative("eItems_GetWeaponClassNameByDefIndex", Native_GetWeaponClassNameByDefIndex);
+	CreateNative("eItems_GetWeaponClassNameByWeapon", Native_GetWeaponClassNameByWeapon);
+	//DisplayNames
+	CreateNative("eItems_GetWeaponDisplayNameByWeaponNum", Native_GetWeaponDisplayNameByWeaponNum);
+	CreateNative("eItems_GetWeaponDisplayNameByDefIndex", Native_GetWeaponDisplayNameByDefIndex);
+	CreateNative("eItems_GetWeaponDisplayNameByClassName", Native_GetWeaponDisplayNameByClassName);
+	CreateNative("eItems_GetWeaponDisplayNameByWeapon", Native_GetWeaponDisplayNameByWeapon);
+	//ViewModels
+	CreateNative("eItems_GetWeaponViewModelByWeaponNum", Native_GetWeaponViewModelByWeaponNum);
+	CreateNative("eItems_GetWeaponViewModelByDefIndex", Native_GetWeaponViewModelByDefIndex);
+	CreateNative("eItems_GetWeaponViewModelByWeapon", Native_GetWeaponViewModelByWeapon);
+	CreateNative("eItems_GetWeaponViewModelByClassName", Native_GetWeaponViewModelByClassName);
+	//WorldModels
+	CreateNative("eItems_GetWeaponWorldModelByWeaponNum", Native_GetWeaponWorldModelByWeaponNum);
+	CreateNative("eItems_GetWeaponWorldModelByDefIndex", Native_GetWeaponWorldModelByDefIndex);
+	CreateNative("eItems_GetWeaponWorldModelByWeapon", Native_GetWeaponWorldModelByWeapon);
+	CreateNative("eItems_GetWeaponWorldModelByClassName", Native_GetWeaponWorldModelByClassName);
+	//Weapon Slot
+	CreateNative("eItems_GetWeaponSlotByWeaponNum", Native_GetWeaponSlotByWeaponNum);
+	CreateNative("eItems_GetWeaponSlotByDefIndex", Native_GetWeaponSlotByDefIndex);
+	CreateNative("eItems_GetWeaponSlotByWeapon", Native_GetWeaponSlotByWeapon);
+	CreateNative("eItems_GetWeaponSlotByClassName", Native_GetWeaponSlotByClassName);
+	//Weapon Team
+	CreateNative("eItems_GetWeaponTeamByWeaponNum", Native_GetWeaponTeamByWeaponNum);
+	CreateNative("eItems_GetWeaponTeamByDefIndex", Native_GetWeaponTeamByDefIndex);
+	CreateNative("eItems_GetWeaponTeamByWeapon", Native_GetWeaponTeamByWeapon);
+	CreateNative("eItems_GetWeaponTeamByClassName", Native_GetWeaponTeamByClassName);
+	//Clip Ammo
+	CreateNative("eItems_GetWeaponClipAmmoByWeaponNum", Native_GetWeaponClipAmmoByWeaponNum);
+	CreateNative("eItems_GetWeaponClipAmmoByDefIndex", Native_GetWeaponClipAmmoByDefIndex);
+	CreateNative("eItems_GetWeaponClipAmmoByWeapon", Native_GetWeaponClipAmmoByWeapon);
+	CreateNative("eItems_GetWeaponClipAmmoByClassName", Native_GetWeaponClipAmmoByClassName);
+	//Reserve Ammo
+	CreateNative("eItems_GetWeaponReserveAmmoByWeaponNum", Native_GetWeaponReserveAmmoByWeaponNum);
+	CreateNative("eItems_GetWeaponReserveAmmoByDefIndex", Native_GetWeaponReserveAmmoByDefIndex);
+	CreateNative("eItems_GetWeaponReserveAmmoByWeapon", Native_GetWeaponReserveAmmoByWeapon);
+	CreateNative("eItems_GetWeaponReserveAmmoByClassName", Native_GetWeaponReserveAmmoByClassName);
+	//Price
+	CreateNative("eItems_GetWeaponPriceByWeaponNum", Native_GetWeaponPriceByWeaponNum);
+	CreateNative("eItems_GetWeaponPriceByDefIndex", Native_GetWeaponPriceByDefIndex);
+	CreateNative("eItems_GetWeaponPriceByWeapon", Native_GetWeaponPriceByWeapon);
+	CreateNative("eItems_GetWeaponPriceByClassName", Native_GetWeaponPriceByClassName);
+	//Max Player Speed
+	CreateNative("eItems_GetWeaponMaxPlayerSpeedByWeaponNum", Native_GetWeaponMaxPlayerSpeedByWeaponNum);
+	CreateNative("eItems_GetWeaponMaxPlayerSpeedByDefIndex", Native_GetWeaponMaxPlayerSpeedByDefIndex);
+	CreateNative("eItems_GetWeaponMaxPlayerSpeedByWeapon", Native_GetWeaponMaxPlayerSpeedByWeapon);
+	CreateNative("eItems_GetWeaponMaxPlayerSpeedByClassName", Native_GetWeaponMaxPlayerSpeedByClassName);
+	//Damage
+	CreateNative("eItems_GetWeaponDamageByWeaponNum", Native_GetWeaponDamageByWeaponNum);
+	CreateNative("eItems_GetWeaponDamageByDefIndex", Native_GetWeaponDamageByDefIndex);
+	CreateNative("eItems_GetWeaponDamageByWeapon", Native_GetWeaponDamageByWeapon);
+	CreateNative("eItems_GetWeaponDamageByClassName", Native_GetWeaponDamageByClassName);
+	//Is Full Auto
+	CreateNative("eItems_IsWeaponFullAutoByWeaponNum", Native_IsWeaponFullAutoByWeaponNum);
+	CreateNative("eItems_IsWeaponFullAutoByDefIndex", Native_IsWeaponFullAutoByDefIndex);
+	CreateNative("eItems_IsWeaponFullAutoByWeapon", Native_IsWeaponFullAutoByWeapon);
+	CreateNative("eItems_IsWeaponFullAutoByClassName", Native_IsWeaponFullAutoByClassName);
+	//Spread
+	CreateNative("eItems_GetWeaponSpreadByWeaponNum", Native_GetWeaponSpreadByWeaponNum);
+	CreateNative("eItems_GetWeaponSpreadByDefIndex", Native_GetWeaponSpreadByDefIndex);
+	CreateNative("eItems_GetWeaponSpreadByWeapon", Native_GetWeaponSpreadByWeapon);
+	CreateNative("eItems_GetWeaponSpreadByClassName", Native_GetWeaponSpreadByClassName);
+	//Cycle Time
+	CreateNative("eItems_GetWeaponCycleTimeByWeaponNum", Native_GetWeaponCycleTimeByWeaponNum);
+	CreateNative("eItems_GetWeaponCycleTimeByDefIndex", Native_GetWeaponCycleTimeByDefIndex);
+	CreateNative("eItems_GetWeaponCycleTimeByWeapon", Native_GetWeaponCycleTimeByWeapon);
+	CreateNative("eItems_GetWeaponCycleTimeByClassName", Native_GetWeaponCycleTimeByClassName);
+	//Stickers Slots
+	CreateNative("eItems_GetWeaponStickersSlotsByWeaponNum", Native_GetWeaponStickersSlotsByWeaponNum);
+	CreateNative("eItems_GetWeaponStickersSlotsByDefIndex", Native_GetWeaponStickersSlotsByDefIndex);
+	CreateNative("eItems_GetWeaponStickersSlotsByWeapon", Native_GetWeaponStickersSlotsByWeapon);
 
-    /*              Gloves            */
+	/*              Skins             */
 
-    CreateNative("eItems_GetGlovesNumByDefIndex", Native_GetGlovesNumByDefIndex);
-    CreateNative("eItems_GetGlovesDefIndexByGlovesNum", Native_GetGlovesDefIndexByGlovesNum);
-    CreateNative("eItems_GetGlovesDisplayNameByDefIndex", Native_GetGlovesDisplayNameByDefIndex);
-    CreateNative("eItems_GetGlovesDisplayNameByGlovesNum", Native_GetGlovesDisplayNameByGlovesNum);
-    CreateNative("eItems_GetGlovesViewModelByGlovesNum", Native_GetGlovesViewModelByGlovesNum);
-    CreateNative("eItems_GetGlovesViewModelByDefIndex", Native_GetGlovesViewModelByDefIndex);
-    CreateNative("eItems_GetGlovesWorldModelByGlovesNum", Native_GetGlovesWorldModelByGlovesNum);
-    CreateNative("eItems_GetGlovesWorldModelByDefIndex", Native_GetGlovesWorldModelByDefIndex);
-    CreateNative("eItems_GetGlovesNumBySkinNum", Native_GetGlovesNumBySkinNum);
-    
-    
+	CreateNative("eItems_IsSkinNumGloveApplicable", Native_IsSkinNumGloveApplicable);
+	CreateNative("eItems_GetSkinNumByDefIndex", Native_GetSkinNumByDefIndex);
+	CreateNative("eItems_GetSkinDefIndexBySkinNum", Native_GetSkinDefIndexBySkinNum);
+	CreateNative("eItems_GetSkinDisplayNameByDefIndex", Native_GetSkinDisplayNameByDefIndex);
+	CreateNative("eItems_GetSkinDisplayNameBySkinNum", Native_GetSkinDisplayNameBySkinNum);
+	CreateNative("eItems_IsNativeSkin", Native_IsNativeSkin);
+	CreateNative("eItems_IsNativeSkinByDefIndex", Native_IsNativeSkinByDefIndex);
 
+	/*              Gloves            */
+
+	CreateNative("eItems_GetGlovesNumByDefIndex", Native_GetGlovesNumByDefIndex);
+	CreateNative("eItems_GetGlovesDefIndexByGlovesNum", Native_GetGlovesDefIndexByGlovesNum);
+	CreateNative("eItems_GetGlovesDisplayNameByDefIndex", Native_GetGlovesDisplayNameByDefIndex);
+	CreateNative("eItems_GetGlovesDisplayNameByGlovesNum", Native_GetGlovesDisplayNameByGlovesNum);
+	CreateNative("eItems_GetGlovesViewModelByGlovesNum", Native_GetGlovesViewModelByGlovesNum);
+	CreateNative("eItems_GetGlovesViewModelByDefIndex", Native_GetGlovesViewModelByDefIndex);
+	CreateNative("eItems_GetGlovesWorldModelByGlovesNum", Native_GetGlovesWorldModelByGlovesNum);
+	CreateNative("eItems_GetGlovesWorldModelByDefIndex", Native_GetGlovesWorldModelByDefIndex);
+	CreateNative("eItems_GetGlovesNumBySkinNum", Native_GetGlovesNumBySkinNum);
+	
+	/*              Music Kits            */  
+
+	CreateNative("eItems_GetMusicKitNumByDefIndex", Native_GetMusicKitNumByDefIndex);
+	CreateNative("eItems_GetMusicKitDefIndexByMusicKitNum", Native_GetMusicKitDefIndexByMusicKitNum);
+	CreateNative("eItems_GetMusicKitDisplayNameByDefIndex", Native_GetMusicKitDisplayNameByDefIndex);
+	CreateNative("eItems_GetMusicKitDisplayNameByMusicKitNum", Native_GetMusicKitDisplayNameByMusicKitNum);
+
+	/*              Pins            */  
+
+	CreateNative("eItems_GetPinNumByDefIndex", Native_GetPinNumByDefIndex);
+	CreateNative("eItems_GetPinDefIndexByPinNum", Native_GetPinDefIndexByPinNum);
+	CreateNative("eItems_GetPinDisplayNameByDefIndex", Native_GetPinDisplayNameByDefIndex);
+	CreateNative("eItems_GetPinDisplayNameByPinNum", Native_GetPinDisplayNameByPinNum);
+
+	/*              Patches            */  
+
+	CreateNative("eItems_GetPatchNumByDefIndex", Native_GetPatchNumByDefIndex);
+	CreateNative("eItems_GetPatchDefIndexByPatchNum", Native_GetPatchDefIndexByPatchNum);
+	CreateNative("eItems_GetPatchDisplayNameByDefIndex", Native_GetPatchDisplayNameByDefIndex);
+	CreateNative("eItems_GetPatchDisplayNameByPatchNum", Native_GetPatchDisplayNameByPatchNum);
+
+	/*              Crates            */  
+
+	CreateNative("eItems_GetCratesNumByDefIndex", Native_GetCratesNumByDefIndex);
+	CreateNative("eItems_GetCratesDefIndexByCratesNum", Native_GetCratesDefIndexByCratesNum);
+	CreateNative("eItems_GetCratesDisplayNameByDefIndex", Native_GetCratesDisplayNameByDefIndex);
+	CreateNative("eItems_GetCratesDisplayNameByCratesNum", Native_GetCratesDisplayNameByCratesNum);
+	CreateNative("eItems_GetCratesViewModelByDefIndex", Native_GetCratesViewModelByDefIndex);
+	CreateNative("eItems_GetCratesViewModelByCratesNum", Native_GetCratesViewModelByCratesNum);
+
+	/*              Sprayes            */  
+
+	CreateNative("eItems_GetSprayNumByDefIndex", Native_GetSprayNumByDefIndex);
+	CreateNative("eItems_GetSprayDefIndexBySprayNum", Native_GetSprayDefIndexBySprayNum);
+	CreateNative("eItems_GetSprayDisplayNameByDefIndex", Native_GetSprayDisplayNameByDefIndex);
+	CreateNative("eItems_GetSprayDisplayNameBySprayNum", Native_GetSprayDisplayNameBySprayNum);
+	CreateNative("eItems_GetSprayMaterialByDefIndex", Native_GetSprayMaterialByDefIndex);
+	CreateNative("eItems_GetSprayMaterialBySprayNum", Native_GetSprayMaterialBySprayNum);
+
+	/*              Coins            */
+
+	CreateNative("eItems_GetCoinSetIdByCoinSetNum", Native_GetCoinSetIdByCoinSetNum);
+	CreateNative("eItems_GetCoinSetNumByCoinSetId", Native_GetCoinSetNumByCoinSetId);
+	CreateNative("eItems_GetCoinSetDisplayNameByCoinSetNum", Native_GetCoinSetDisplayNameByCoinSetNum);
+	CreateNative("eItems_GetCoinSetDisplayNameByCoinSetId", Native_GetCoinSetDisplayNameByCoinSetId);
+
+	CreateNative("eItems_GetCoinDefIndexByCoinNum", Native_GetCoinDefIndexByCoinNum);
+	CreateNative("eItems_GetCoinNumByDefIndex", Native_GetCoinNumByDefIndex);
+	CreateNative("eItems_GetCoinDisplayNameByCoinNum", Native_GetCoinDisplayNameByCoinNum);
+	CreateNative("eItems_GetCoinDisplayNameByDefIndex", Native_GetCoinDisplayNameByDefIndex);
+
+	CreateNative("eItems_IsCoinInSet", Native_IsCoinInSet);
+
+	/*              Stickers            */
+
+	CreateNative("eItems_GetStickerSetIdByStickerSetNum", Native_GetStickerSetIdByStickerSetNum);
+	CreateNative("eItems_GetStickerSetNumByStickerSetId", Native_GetStickerSetNumByStickerSetId);
+	CreateNative("eItems_GetStickerSetDisplayNameByStickerSetNum", Native_GetStickerSetDisplayNameByStickerSetNum);
+	CreateNative("eItems_GetStickerSetDisplayNameByStickerSetId", Native_GetStickerSetDisplayNameByStickerSetId);
+
+	CreateNative("eItems_GetStickerDefIndexByStickerNum", Native_GetStickerDefIndexByStickerNum);
+	CreateNative("eItems_GetStickerNumByDefIndex", Native_GetStickerNumByDefIndex);
+	CreateNative("eItems_GetStickerDisplayNameByStickerNum", Native_GetStickerDisplayNameByStickerNum);
+	CreateNative("eItems_GetStickerDisplayNameByDefIndex", Native_GetStickerDisplayNameByDefIndex);
+
+	CreateNative("eItems_IsStickerInSet", Native_IsStickerInSet);
 }
+
 
 public int Native_GetWeaponCount(Handle plugin, int numParams)
 {
-    return GetWeaponCount();
+	return GetWeaponCount();
 }
 
 public int Native_GetPaintsCount(Handle plugin, int numParams)
 {
-    return GetPaintsCount();
+	return GetPaintsCount();
 }
 
 public int Native_GetGlovesCount(Handle plugin, int numParams)
 {
-    return GetGlovesCount();
+	return GetGlovesCount();
+}
+
+public int Native_GetMusicKitsCount(Handle plugin, int numParams)
+{
+	return GetMusicKitsCount();
+}
+
+public int Native_GetPinsCount(Handle plugin, int numParams)
+{
+	return GetPinsCount();
+}
+
+public int Native_GetCoinsCount(Handle plugin, int numParams)
+{
+	return GetCoinsCount();
+}
+
+public int Native_GetCoinsSetsCount(Handle plugin, int numParams)
+{
+	return GetCoinsSetsCount();
+}
+
+public int Native_GetStickersCount(Handle plugin, int numParams)
+{
+	return GetStickersCount();
+}
+
+public int Native_GetStickersSetsCount(Handle plugin, int numParams)
+{
+	return GetStickersSetsCount();
 }
 
 public int Native_AreItemsSynced(Handle plugin, int numParams)
 {
-    return AreItemsSynced();
+	return AreItemsSynced();
 }
 
 public int Native_AreItemsSyncing(Handle plugin, int numParams)
 {
-    return AreItemsSyncing();
+	return AreItemsSyncing();
 }
 
 public int Native_ReSync(Handle hPlugin, int iNumParams)
 {
-    CheckHibernation();
-    ParseItems();
-    return true;
+	ParseItems();
+	return true;
 }
 
-    // ClassNames
+	// ClassNames
 
 public int Native_GetWeaponClassNameByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    if(g_iWeaponCount < iWeaponNum)
-    {
-        return false;
-    }
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return false;
+	}
 
-    char szClassName[48];
+	char szClassName[48];
 
-    if(!GetWeaponClassNameByWeaponNum(iWeaponNum, szClassName, sizeof(szClassName)))
-    {
-        return false;
-    }
+	if(!GetWeaponClassNameByWeaponNum(iWeaponNum, szClassName, sizeof(szClassName)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szClassName, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szClassName, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetWeaponClassNameByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    char szClassName[48];
+	char szClassName[48];
 
-    if(!GetWeaponClassNameByDefIndex(iDefIndex, szClassName, sizeof(szClassName)))
-    {
-        return false;
-    }
+	if(!GetWeaponClassNameByDefIndex(iDefIndex, szClassName, sizeof(szClassName)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szClassName, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szClassName, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetWeaponClassNameByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    if(!IsValidWeapon(iWeapon))
-    {
-        return false;
-    }
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return false;
+	}
 
-    char szClassName[48];
+	char szClassName[48];
 
-    if(!GetWeaponClassNameByWeapon(iWeapon, szClassName, sizeof(szClassName)))
-    {
-        return false;
-    }
+	if(!GetWeaponClassNameByWeapon(iWeapon, szClassName, sizeof(szClassName)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szClassName, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szClassName, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
-    // DisplayNames
+	// DisplayNames
 
 public int Native_GetWeaponDisplayNameByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    char szDisplayName[48];
+	char szDisplayName[48];
 
-    if(!GetWeaponDisplayNameByDefIndex(iDefIndex, szDisplayName, sizeof(szDisplayName)))
-    {
-        return false;
-    }
+	if(!GetWeaponDisplayNameByDefIndex(iDefIndex, szDisplayName, sizeof(szDisplayName)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetWeaponDisplayNameByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
 
-    char szDisplayName[48];
+	char szDisplayName[48];
 
-    if(!GetWeaponDisplayNameByClassName(szClassName, szDisplayName, sizeof(szDisplayName)))
-    {
-        return false;
-    }
+	if(!GetWeaponDisplayNameByClassName(szClassName, szDisplayName, sizeof(szDisplayName)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetWeaponDisplayNameByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    if(g_iWeaponCount < iWeaponNum)
-    {
-        return false;
-    }
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return false;
+	}
 
-    char szDisplayName[48];
+	char szDisplayName[48];
 
-    if(!GetWeaponDisplayNameByWeaponNum(iWeaponNum, szDisplayName, sizeof(szDisplayName)))
-    {
-        return false;
-    }
+	if(!GetWeaponDisplayNameByWeaponNum(iWeaponNum, szDisplayName, sizeof(szDisplayName)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetWeaponDisplayNameByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    if(!IsValidWeapon(iWeapon))
-    {
-        return false;
-    }
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return false;
+	}
 
-    char szDisplayName[48];
+	char szDisplayName[48];
 
-    if(!GetWeaponDisplayNameByWeapon(iWeapon, szDisplayName, sizeof(szDisplayName)))
-    {
-        return false;
-    }
+	if(!GetWeaponDisplayNameByWeapon(iWeapon, szDisplayName, sizeof(szDisplayName)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
-    //ViewModel
+	//ViewModel
 
 public int Native_GetWeaponViewModelByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    if(g_iWeaponCount < iWeaponNum)
-    {
-        return false;
-    }
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return false;
+	}
 
-    char szViewModel[PLATFORM_MAX_PATH];
+	char szViewModel[PLATFORM_MAX_PATH];
 
-    if(!GetWeaponViewModelByWeaponNum(iWeaponNum, szViewModel, sizeof(szViewModel)))
-    {
-        return false;
-    }
+	if(!GetWeaponViewModelByWeaponNum(iWeaponNum, szViewModel, sizeof(szViewModel)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szViewModel, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szViewModel, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetWeaponViewModelByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    char szViewModel[PLATFORM_MAX_PATH];
+	char szViewModel[PLATFORM_MAX_PATH];
 
-    if(!GetWeaponViewModelByDefIndex(iDefIndex, szViewModel, sizeof(szViewModel)))
-    {
-        return false;
-    }
+	if(!GetWeaponViewModelByDefIndex(iDefIndex, szViewModel, sizeof(szViewModel)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szViewModel, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szViewModel, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetWeaponViewModelByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    if(!IsValidWeapon(iWeapon))
-    {
-        return false;
-    }
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return false;
+	}
 
-    char szViewModel[PLATFORM_MAX_PATH];
+	char szViewModel[PLATFORM_MAX_PATH];
 
-    if(!GetWeaponViewModelByWeapon(iWeapon, szViewModel, sizeof(szViewModel)))
-    {
-        return false;
-    }
+	if(!GetWeaponViewModelByWeapon(iWeapon, szViewModel, sizeof(szViewModel)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szViewModel, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szViewModel, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetWeaponViewModelByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
 
-    char szViewModel[PLATFORM_MAX_PATH];
+	char szViewModel[PLATFORM_MAX_PATH];
 
-    if(!GetWeaponViewModelByClassName(szClassName, szViewModel, sizeof(szViewModel)))
-    {
-        return false;
-    }
+	if(!GetWeaponViewModelByClassName(szClassName, szViewModel, sizeof(szViewModel)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szViewModel, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szViewModel, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
-    //WorldModel
+	//WorldModel
 
 public int Native_GetWeaponWorldModelByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    if(g_iWeaponCount < iWeaponNum)
-    {
-        return false;
-    }
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return false;
+	}
 
-    char szWorldModel[PLATFORM_MAX_PATH];
+	char szWorldModel[PLATFORM_MAX_PATH];
 
-    if(!GetWeaponWorldModelByWeaponNum(iWeaponNum, szWorldModel, sizeof(szWorldModel)))
-    {
-        return false;
-    }
+	if(!GetWeaponWorldModelByWeaponNum(iWeaponNum, szWorldModel, sizeof(szWorldModel)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetWeaponWorldModelByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    char szWorldModel[PLATFORM_MAX_PATH];
+	char szWorldModel[PLATFORM_MAX_PATH];
 
-    if(!GetWeaponWorldModelByDefIndex(iDefIndex, szWorldModel, sizeof(szWorldModel)))
-    {
-        return false;
-    }
+	if(!GetWeaponWorldModelByDefIndex(iDefIndex, szWorldModel, sizeof(szWorldModel)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetWeaponWorldModelByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    if(!IsValidWeapon(iWeapon))
-    {
-        return false;
-    }
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return false;
+	}
 
-    char szWorldModel[PLATFORM_MAX_PATH];
+	char szWorldModel[PLATFORM_MAX_PATH];
 
-    if(!GetWeaponWorldModelByWeapon(iWeapon, szWorldModel, sizeof(szWorldModel)))
-    {
-        return false;
-    }
+	if(!GetWeaponWorldModelByWeapon(iWeapon, szWorldModel, sizeof(szWorldModel)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetWeaponWorldModelByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
 
-    char szWorldModel[PLATFORM_MAX_PATH];
+	char szWorldModel[PLATFORM_MAX_PATH];
 
-    if(!GetWeaponWorldModelByClassName(szClassName, szWorldModel, sizeof(szWorldModel)))
-    {
-        return false;
-    }
+	if(!GetWeaponWorldModelByClassName(szClassName, szWorldModel, sizeof(szWorldModel)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
-    //Generic
+	//Generic
 
 public int Native_IsDefIndexKnife(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    return IsDefIndexKnife(iDefIndex);
+	int iDefIndex = GetNativeCell(1);
+	return IsDefIndexKnife(iDefIndex);
 }
 
 public int Native_GetWeaponDefIndexByWeapon(Handle hPlugin, int iNumParams)
@@ -456,60 +566,60 @@ public int Native_GetWeaponDefIndexByWeapon(Handle hPlugin, int iNumParams)
 
 public int Native_GetWeaponNumByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    return GetWeaponNumByDefIndex(iDefIndex);
+	int iDefIndex = GetNativeCell(1);
+	return GetWeaponNumByDefIndex(iDefIndex);
 }
 
 public int Native_GetWeaponNumByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
-    return GetWeaponNumByClassName(szClassName);
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
+	return GetWeaponNumByClassName(szClassName);
 }
 
 public int Native_GetWeaponNumByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    return GetWeaponNumByWeapon(iWeapon);
+	int iWeapon = GetNativeCell(1);
+	return GetWeaponNumByWeapon(iWeapon);
 }
 
 public int Native_GetWeaponDefIndexByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    return GetWeaponDefIndexByWeaponNum(iWeaponNum);
+	int iWeaponNum = GetNativeCell(1);
+	return GetWeaponDefIndexByWeaponNum(iWeaponNum);
 }
 
 public int Native_GetWeaponDefIndexByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
-    return GetWeaponDefIndexByClassName(szClassName);
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
+	return GetWeaponDefIndexByClassName(szClassName);
 }
 
 public int Native_GetActiveWeaponNum(Handle hPlugin, int iNumParams)
 {
-    int client = GetNativeCell(1);
-    int iWeapon = GetActiveWeapon(client);
+	int client = GetNativeCell(1);
+	int iWeapon = GetActiveWeapon(client);
 
-    if(!IsValidWeapon(iWeapon))
-    {
-        return -1;
-    }
+	if(!IsValidWeapon(iWeapon))
+	{
+		return -1;
+	}
 
-    return GetWeaponNumByWeapon(iWeapon);
+	return GetWeaponNumByWeapon(iWeapon);
 }
 
 public int Native_GetActiveWeaponDefIndex(Handle hPlugin, int iNumParams)
 {
-    int client = GetNativeCell(1);
-    int iWeapon = GetActiveWeapon(client);
+	int client = GetNativeCell(1);
+	int iWeapon = GetActiveWeapon(client);
 
-    if(!IsValidWeapon(iWeapon))
-    {
-        return -1;
-    }
+	if(!IsValidWeapon(iWeapon))
+	{
+		return -1;
+	}
 
-    return GetWeaponDefIndexByWeapon(iWeapon);
+	return GetWeaponDefIndexByWeapon(iWeapon);
 }
 
 public int Native_GetActiveWeapon(Handle hPlugin, int iNumParams)
@@ -520,23 +630,23 @@ public int Native_GetActiveWeapon(Handle hPlugin, int iNumParams)
 
 public int Native_GetActiveWeaponClassName(Handle hPlugin, int iNumParams)
 {
-    int client = GetNativeCell(1);
+	int client = GetNativeCell(1);
 
-    int iDefIndex = GetActiveWeaponDefIndex(client);
+	int iDefIndex = GetActiveWeaponDefIndex(client);
 
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    char szClassName[48];
+	char szClassName[48];
 
-    if (GetWeaponClassNameByDefIndex(iDefIndex, szClassName, sizeof(szClassName)))
-    {
-        return SetNativeString(2, szClassName, GetNativeCell(3)) == SP_ERROR_NONE;
-    }
+	if (GetWeaponClassNameByDefIndex(iDefIndex, szClassName, sizeof(szClassName)))
+	{
+		return SetNativeString(2, szClassName, GetNativeCell(3)) == SP_ERROR_NONE;
+	}
 
-    return false;
+	return false;
 }
 
 public int Native_IsSkinnableDefIndex(Handle hPlugin, int iNumParams)
@@ -544,9 +654,9 @@ public int Native_IsSkinnableDefIndex(Handle hPlugin, int iNumParams)
 	int iDefIndex = GetNativeCell(1);
 
 	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	{
+		return false;
+	}
 
 	return IsSkinnableDefIndex(iDefIndex);
 }
@@ -569,478 +679,514 @@ public int Native_FindWeaponByDefIndex(Handle hPlugin, int iNumParams)
 
 public int Native_FindWeaponByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
+	char szClassName[48];
 
-    int client = GetNativeCell(1);
-    GetNativeString(2, szClassName, sizeof(szClassName));
+	int client = GetNativeCell(1);
+	GetNativeString(2, szClassName, sizeof(szClassName));
 
-    return FindWeaponByClassName(client, szClassName);
+	return FindWeaponByClassName(client, szClassName);
 }
 
-    //Weapon Slot
+	//Weapon Slot
 
 public int Native_GetWeaponSlotByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    if(g_iWeaponCount < iWeaponNum)
-    {
-        return false;
-    }
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return false;
+	}
 
-    return GetWeaponSlotByWeaponNum(iWeaponNum);
+	return GetWeaponSlotByWeaponNum(iWeaponNum);
 }
 
 public int Native_GetWeaponSlotByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    return GetWeaponSlotByDefIndex(iDefIndex);
+	return GetWeaponSlotByDefIndex(iDefIndex);
 }
 
 public int Native_GetWeaponSlotByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    if(!IsValidWeapon(iWeapon))
-    {
-        return false;
-    }
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return false;
+	}
 
-    return GetWeaponSlotByWeapon(iWeapon);
+	return GetWeaponSlotByWeapon(iWeapon);
 }
 
 public int Native_GetWeaponSlotByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
 
-    return GetWeaponSlotByClassName(szClassName);
+	return GetWeaponSlotByClassName(szClassName);
 }
 
-    //Weapon Team
+	//Weapon Team
 
 public int Native_GetWeaponTeamByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    if(g_iWeaponCount < iWeaponNum)
-    {
-        return false;
-    }
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return false;
+	}
 
-    return GetWeaponTeamByWeaponNum(iWeaponNum);
+	return GetWeaponTeamByWeaponNum(iWeaponNum);
 }
 
 public int Native_GetWeaponTeamByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    return GetWeaponTeamByDefIndex(iDefIndex);
+	return GetWeaponTeamByDefIndex(iDefIndex);
 }
 
 public int Native_GetWeaponTeamByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    if(!IsValidWeapon(iWeapon))
-    {
-        return false;
-    }
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return false;
+	}
 
-    return GetWeaponTeamByWeapon(iWeapon);
+	return GetWeaponTeamByWeapon(iWeapon);
 }
 
 public int Native_GetWeaponTeamByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
 
-    return GetWeaponTeamByClassName(szClassName);
+	return GetWeaponTeamByClassName(szClassName);
 }
 
-    //Clip Ammo
+	//Clip Ammo
 public int Native_GetWeaponClipAmmoByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    if(g_iWeaponCount < iWeaponNum)
-    {
-        return false;
-    }
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return false;
+	}
 
-    return GetWeaponClipAmmoByWeaponNum(iWeaponNum);
+	return GetWeaponClipAmmoByWeaponNum(iWeaponNum);
 }
 
 public int Native_GetWeaponClipAmmoByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    return GetWeaponClipAmmoByDefIndex(iDefIndex);
+	return GetWeaponClipAmmoByDefIndex(iDefIndex);
 }
 
 public int Native_GetWeaponClipAmmoByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    if(!IsValidWeapon(iWeapon))
-    {
-        return false;
-    }
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return false;
+	}
 
-    return GetWeaponClipAmmoByWeapon(iWeapon);
+	return GetWeaponClipAmmoByWeapon(iWeapon);
 }
 
 public int Native_GetWeaponClipAmmoByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
 
-    return GetWeaponClipAmmoByClassName(szClassName);
+	return GetWeaponClipAmmoByClassName(szClassName);
 }
 
-    //Reserve Ammo
+	//Reserve Ammo
 public int Native_GetWeaponReserveAmmoByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    if(g_iWeaponCount < iWeaponNum)
-    {
-        return false;
-    }
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return false;
+	}
 
-    return GetWeaponReserveAmmoByWeaponNum(iWeaponNum);
+	return GetWeaponReserveAmmoByWeaponNum(iWeaponNum);
 }
 
 public int Native_GetWeaponReserveAmmoByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    return GetWeaponReserveAmmoByDefIndex(iDefIndex);
+	return GetWeaponReserveAmmoByDefIndex(iDefIndex);
 }
 
 public int Native_GetWeaponReserveAmmoByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    if(!IsValidWeapon(iWeapon))
-    {
-        return false;
-    }
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return false;
+	}
 
-    return GetWeaponReserveAmmoByWeapon(iWeapon);
+	return GetWeaponReserveAmmoByWeapon(iWeapon);
 }
 
 public int Native_GetWeaponReserveAmmoByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
 
-    return GetWeaponReserveAmmoByClassName(szClassName);
+	return GetWeaponReserveAmmoByClassName(szClassName);
 }
 
-    //Price
+	//Price
 public int Native_GetWeaponPriceByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    if(g_iWeaponCount < iWeaponNum)
-    {
-        return false;
-    }
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return false;
+	}
 
-    return GetWeaponPriceByWeaponNum(iWeaponNum);
+	return GetWeaponPriceByWeaponNum(iWeaponNum);
 }
 
 public int Native_GetWeaponPriceByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    return GetWeaponPriceByDefIndex(iDefIndex);
+	return GetWeaponPriceByDefIndex(iDefIndex);
 }
 
 public int Native_GetWeaponPriceByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    if(!IsValidWeapon(iWeapon))
-    {
-        return false;
-    }
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return false;
+	}
 
-    return GetWeaponPriceByWeapon(iWeapon);
+	return GetWeaponPriceByWeapon(iWeapon);
 }
 
 public int Native_GetWeaponPriceByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
 
-    return GetWeaponPriceByClassName(szClassName);
+	return GetWeaponPriceByClassName(szClassName);
 }
 
-    //Max Player Speed
+	//Max Player Speed
 public int Native_GetWeaponMaxPlayerSpeedByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    if(g_iWeaponCount < iWeaponNum)
-    {
-        return false;
-    }
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return false;
+	}
 
-    return GetWeaponMaxPlayerSpeedByWeaponNum(iWeaponNum);
+	return GetWeaponMaxPlayerSpeedByWeaponNum(iWeaponNum);
 }
 
 public int Native_GetWeaponMaxPlayerSpeedByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    return GetWeaponMaxPlayerSpeedByDefIndex(iDefIndex);
+	return GetWeaponMaxPlayerSpeedByDefIndex(iDefIndex);
 }
 
 public int Native_GetWeaponMaxPlayerSpeedByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    if(!IsValidWeapon(iWeapon))
-    {
-        return false;
-    }
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return false;
+	}
 
-    return GetWeaponMaxPlayerSpeedByWeapon(iWeapon);
+	return GetWeaponMaxPlayerSpeedByWeapon(iWeapon);
 }
 
 public int Native_GetWeaponMaxPlayerSpeedByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
 
-    return GetWeaponMaxPlayerSpeedByClassName(szClassName);
+	return GetWeaponMaxPlayerSpeedByClassName(szClassName);
 }
 
-    //Damage
+	//Damage
 public int Native_GetWeaponDamageByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    if(g_iWeaponCount < iWeaponNum)
-    {
-        return false;
-    }
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return false;
+	}
 
-    return GetWeaponDamageByWeaponNum(iWeaponNum);
+	return GetWeaponDamageByWeaponNum(iWeaponNum);
 }
 
 public int Native_GetWeaponDamageByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    return GetWeaponDamageByDefIndex(iDefIndex);
+	return GetWeaponDamageByDefIndex(iDefIndex);
 }
 
 public int Native_GetWeaponDamageByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    if(!IsValidWeapon(iWeapon))
-    {
-        return false;
-    }
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return false;
+	}
 
-    return GetWeaponDamageByWeapon(iWeapon);
+	return GetWeaponDamageByWeapon(iWeapon);
 }
 
 public int Native_GetWeaponDamageByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
 
-    return GetWeaponDamageByClassName(szClassName);
+	return GetWeaponDamageByClassName(szClassName);
 }
 
-    //Is Full Auto
+	//Is Full Auto
 public int Native_IsWeaponFullAutoByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    if(g_iWeaponCount < iWeaponNum)
-    {
-        return false;
-    }
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return false;
+	}
 
-    return view_as<bool>(IsWeaponFullAutoByWeaponNum(iWeaponNum));
+	return view_as<bool>(IsWeaponFullAutoByWeaponNum(iWeaponNum));
 }
 
 public int Native_IsWeaponFullAutoByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    return view_as<bool>(IsWeaponFullAutoByDefIndex(iDefIndex));
+	return view_as<bool>(IsWeaponFullAutoByDefIndex(iDefIndex));
 }
 
 public int Native_IsWeaponFullAutoByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    if(!IsValidWeapon(iWeapon))
-    {
-        return false;
-    }
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return false;
+	}
 
-    return view_as<bool>(IsWeaponFullAutoByWeapon(iWeapon));
+	return view_as<bool>(IsWeaponFullAutoByWeapon(iWeapon));
 }
 
 public int Native_IsWeaponFullAutoByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
 
-    return view_as<bool>(IsWeaponFullAutoByClassName(szClassName));
+	return view_as<bool>(IsWeaponFullAutoByClassName(szClassName));
 }
 
-    //Spread
+	//Spread
 public int Native_GetWeaponSpreadByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    if(g_iWeaponCount < iWeaponNum)
-    {
-        return view_as<int>(-1.0);
-    }
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return view_as<int>(-1.0);
+	}
 
-    return view_as<int>(GetWeaponSpreadByWeaponNum(iWeaponNum));
+	return view_as<int>(GetWeaponSpreadByWeaponNum(iWeaponNum));
 }
 
 public int Native_GetWeaponSpreadByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return view_as<int>(-1.0);
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return view_as<int>(-1.0);
+	}
 
-    return view_as<int>(GetWeaponSpreadByDefIndex(iDefIndex));
+	return view_as<int>(GetWeaponSpreadByDefIndex(iDefIndex));
 }
 
 public int Native_GetWeaponSpreadByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    if(!IsValidWeapon(iWeapon))
-    {
-        return view_as<int>(-1.0);
-    }
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return view_as<int>(-1.0);
+	}
 
-    return view_as<int>(GetWeaponSpreadByWeapon(iWeapon));
+	return view_as<int>(GetWeaponSpreadByWeapon(iWeapon));
 }
 
 public int Native_GetWeaponSpreadByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
 
-    return view_as<int>(GetWeaponSpreadByClassName(szClassName));
+	return view_as<int>(GetWeaponSpreadByClassName(szClassName));
 }
 
-    //Cycle Time
+	//Cycle Time
 public int Native_GetWeaponCycleTimeByWeaponNum(Handle plugin, int numParams)
 {
-    int iWeaponNum = GetNativeCell(1);
-    if(g_iWeaponCount < iWeaponNum)
-    {
-        return view_as<int>(-1.0);
-    }
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return view_as<int>(-1.0);
+	}
 
-    return view_as<int>(GetWeaponCycleTimeByWeaponNum(iWeaponNum));
+	return view_as<int>(GetWeaponCycleTimeByWeaponNum(iWeaponNum));
 }
 
 public int Native_GetWeaponCycleTimeByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
-    {
-        return view_as<int>(-1.0);
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return view_as<int>(-1.0);
+	}
 
-    return view_as<int>(GetWeaponCycleTimeByDefIndex(iDefIndex));
+	return view_as<int>(GetWeaponCycleTimeByDefIndex(iDefIndex));
 }
 
 public int Native_GetWeaponCycleTimeByWeapon(Handle plugin, int numParams)
 {
-    int iWeapon = GetNativeCell(1);
-    if(!IsValidWeapon(iWeapon))
-    {
-        return view_as<int>(-1.0);
-    }
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return view_as<int>(-1.0);
+	}
 
-    return view_as<int>(GetWeaponCycleTimeByWeapon(iWeapon));
+	return view_as<int>(GetWeaponCycleTimeByWeapon(iWeapon));
 }
 
 public int Native_GetWeaponCycleTimeByClassName(Handle plugin, int numParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
 
-    return view_as<int>(GetWeaponCycleTimeByClassName(szClassName));
+	return view_as<int>(GetWeaponCycleTimeByClassName(szClassName));
 }
+
+	//Stickers Slots
+public int Native_GetWeaponStickersSlotsByWeaponNum(Handle plugin, int numParams)
+{
+	int iWeaponNum = GetNativeCell(1);
+	if(g_iWeaponCount < iWeaponNum)
+	{
+		return -1;
+	}
+
+	return GetWeaponStickersSlotsByWeaponNum(iWeaponNum);
+}
+
+public int Native_GetWeaponStickersSlotsByDefIndex(Handle plugin, int numParams)
+{
+	int iDefIndex = GetNativeCell(1);
+	if(g_arWeaponsNum.FindValue(iDefIndex) == -1)
+	{
+		return -1;
+	}
+
+	return GetWeaponStickersSlotsByDefIndex(iDefIndex);
+}
+
+public int Native_GetWeaponStickersSlotsByWeapon(Handle plugin, int numParams)
+{
+	int iWeapon = GetNativeCell(1);
+	if(!IsValidWeapon(iWeapon))
+	{
+		return -1;
+	}
+
+	return GetWeaponStickersSlotsByWeapon(iWeapon);
+}
+
 
 public int Native_RefillClipAmmo(Handle hPlugin, int iNumParams)
 {
-    int iWeapon = GetNativeCell(1);
+	int iWeapon = GetNativeCell(1);
 
-    if(!IsValidWeapon(iWeapon))
-    {
-        return false;
-    }
+	if(!IsValidWeapon(iWeapon))
+	{
+		return false;
+	}
 
-    return RefillClipAmmo(iWeapon);
+	return RefillClipAmmo(iWeapon);
 }
 
 public int Native_RefillReserveAmmo(Handle hPlugin, int iNumParams)
 {
-    int iWeapon = GetNativeCell(1);
+	int iWeapon = GetNativeCell(1);
 
-    if(!IsValidWeapon(iWeapon))
-    {
-        return false;
-    }
+	if(!IsValidWeapon(iWeapon))
+	{
+		return false;
+	}
 
-    return RefillReserveAmmo(iWeapon);
+	return RefillReserveAmmo(iWeapon);
 }
 
 public int Native_IsValidWeapon(Handle hPlugin, int iNumParams)
 {
-    int iWeapon = GetNativeCell(1);
-    return IsValidWeapon(iWeapon);
+	int iWeapon = GetNativeCell(1);
+	return IsValidWeapon(iWeapon);
 }
 
 public int Native_GiveWeapon(Handle hPlugin, int iNumParams)
 {
-    int client = GetNativeCell(1);
-    char szClassName[48];
+	int client = GetNativeCell(1);
+	char szClassName[48];
 
-    GetNativeString(2, szClassName, sizeof(szClassName));
+	GetNativeString(2, szClassName, sizeof(szClassName));
 
-    int iReserveAmmo = GetNativeCell(3);
-    int iClipAmmo = GetNativeCell(4);
-    int iSwitchTo = GetNativeCell(5);
+	int iReserveAmmo = GetNativeCell(3);
+	int iClipAmmo = GetNativeCell(4);
+	int iSwitchTo = GetNativeCell(5);
+	bool bSwitchAnimation = GetNativeCell(6);
 
-    return GiveWeapon(client, szClassName, iReserveAmmo, iClipAmmo, iSwitchTo);
+	return GiveWeapon(client, szClassName, iReserveAmmo, iClipAmmo, iSwitchTo, bSwitchAnimation);
 }
 
 public int Native_RemoveKnife(Handle hPlugin, int iNumParams)
@@ -1052,34 +1198,35 @@ public int Native_RemoveKnife(Handle hPlugin, int iNumParams)
 
 public int Native_RemoveWeapon(Handle hPlugin, int iNumParams)
 {
-    int client = GetNativeCell(1);
-    int iWeapon = GetNativeCell(2);
+	int client = GetNativeCell(1);
+	int iWeapon = GetNativeCell(2);
 
-    return RemoveWeapon(client, iWeapon);
+	return RemoveWeapon(client, iWeapon);
 }
 
 public int Native_RespawnWeapon(Handle hPlugin, int iNumParams)
 {
 	int client = GetNativeCell(1);
 	int iWeapon = GetNativeCell(2);
-	
-	return RespawnWeapon(client, iWeapon);
+	bool bSwitchAnimation = GetNativeCell(3);
+
+	return RespawnWeapon(client, iWeapon, bSwitchAnimation);
 }
 
 public int Native_RespawnWeaponBySlot(Handle hPlugin, int iNumParams)
 {
-    int client = GetNativeCell(1);
-    int iSlot = GetNativeCell(2);
-    int iWeapon = GetPlayerWeaponSlot(client, iSlot);
-    return RespawnWeapon(client, iWeapon);
+	int client = GetNativeCell(1);
+	int iSlot = GetNativeCell(2);
+	int iWeapon = GetPlayerWeaponSlot(client, iSlot);
+	return RespawnWeapon(client, iWeapon);
 }
 
 public int Native_RemoveAllWeapons(Handle hPlugin, int iNumParams)
 {
-    int client = GetNativeCell(1);
-    int iSkipSlot = GetNativeCell(2);
+	int client = GetNativeCell(1);
+	int iSkipSlot = GetNativeCell(2);
 
-    return RemoveAllWeapons(client, iSkipSlot);
+	return RemoveAllWeapons(client, iSkipSlot);
 }
 
 
@@ -1102,12 +1249,12 @@ public int Native_SetAllWeaponsAmmo(Handle hPlugin, int iNumParams)
 
 public int Native_SetAllWeaponsAmmoByClassName(Handle hPlugin, int iNumParams)
 {
-    char szClassName[48];
-    GetNativeString(1, szClassName, sizeof(szClassName));
-    int iReserveAmmo = GetNativeCell(2);
-    int iClipAmmo = GetNativeCell(2);
+	char szClassName[48];
+	GetNativeString(1, szClassName, sizeof(szClassName));
+	int iReserveAmmo = GetNativeCell(2);
+	int iClipAmmo = GetNativeCell(2);
 
-    return SetAllWeaponsAmmoByClassName(szClassName, iReserveAmmo, iClipAmmo);
+	return SetAllWeaponsAmmoByClassName(szClassName, iReserveAmmo, iClipAmmo);
 }
 
 public int Native_SetActiveWeapon(Handle hPlugin, int iNumParams)
@@ -1126,234 +1273,941 @@ public int Native_DropWeapon(Handle hPlugin, int iNumParams)
 	return DropWeapon(client, iWeapon);
 }
 
+public int Native_HasRareInspectByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iWeaponDefIndex = GetNativeCell(1);
+
+	if(g_arWeaponsNum.FindValue(iWeaponDefIndex) == -1)
+	{
+		return false;
+	}
+
+	return HasRareInspectByDefIndex(iWeaponDefIndex);
+}
+
+public int Native_HasRareDrawByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iWeaponDefIndex = GetNativeCell(1);
+
+	if(g_arWeaponsNum.FindValue(iWeaponDefIndex) == -1)
+	{
+		return false;
+	}
+
+	return HasRareDrawByDefIndex(iWeaponDefIndex);
+}
+
+public int Native_GetRareInspectSequenceByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iWeaponDefIndex = GetNativeCell(1);
+
+	if(g_arWeaponsNum.FindValue(iWeaponDefIndex) == -1)
+	{
+		return -1;
+	}
+
+	return GetRareInspectSequenceByDefIndex(iWeaponDefIndex);
+}
+
+public int Native_GetRareDrawSequenceByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iWeaponDefIndex = GetNativeCell(1);
+
+	if(g_arWeaponsNum.FindValue(iWeaponDefIndex) == -1)
+	{
+		return -1;
+	}
+
+	return GetRareDrawSequenceByDefIndex(iWeaponDefIndex);
+}
+
 public int Native_IsSkinNumGloveApplicable(Handle hPlugin, int iNumParams)
 {
-    int iSkinNum = GetNativeCell(1);
+	int iSkinNum = GetNativeCell(1);
 
-    if(g_iPaintsCount < iSkinNum)
-    {
-        return false;
-    }
+	if(g_iPaintsCount < iSkinNum)
+	{
+		return false;
+	}
 
-    return IsSkinNumGloveApplicable(iSkinNum);
+	return IsSkinNumGloveApplicable(iSkinNum);
 }
 
 public int Native_GetSkinNumByDefIndex(Handle hPlugin, int iNumParams)
 {
-    int iDefIndex = GetNativeCell(1);
+	int iDefIndex = GetNativeCell(1);
 
-    if(g_arSkinsNum.FindValue(iDefIndex) == -1)
-    {
-        return -1;
-    }
-    return GetSkinNumByDefIndex(iDefIndex);
+	if(g_arSkinsNum.FindValue(iDefIndex) == -1)
+	{
+		return -1;
+	}
+	return GetSkinNumByDefIndex(iDefIndex);
 }
 
 public int Native_GetSkinDefIndexBySkinNum(Handle hPlugin, int iNumParams)
 {
-    int iSkinNum = GetNativeCell(1);
+	int iSkinNum = GetNativeCell(1);
 
-    if(g_iPaintsCount < iSkinNum)
-    {
-        return -1;
-    }
-    return GetSkinDefIndexBySkinNum(iSkinNum);
+	if(g_iPaintsCount < iSkinNum)
+	{
+		return -1;
+	}
+	return GetSkinDefIndexBySkinNum(iSkinNum);
 }
 
 public int Native_GetSkinDisplayNameByDefIndex(Handle hPlugin, int iNumParams)
 {
-    int iDefIndex = GetNativeCell(1);
+	int iDefIndex = GetNativeCell(1);
 
-    if(g_arSkinsNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	if(g_arSkinsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    char szDisplayName[48];
+	char szDisplayName[48];
 
-    if(!GetSkinDisplayNameByDefIndex(iDefIndex, szDisplayName, sizeof(szDisplayName)))
-    {
-       return false; 
-    }
+	if(!GetSkinDisplayNameByDefIndex(iDefIndex, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
 
-    return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetSkinDisplayNameBySkinNum(Handle hPlugin, int iNumParams)
 {
-    int iSkinNum = GetNativeCell(1);
+	int iSkinNum = GetNativeCell(1);
 
-    if(g_iPaintsCount < iSkinNum)
-    {
-        return -1;
-    }
+	if(g_iPaintsCount < iSkinNum)
+	{
+		return -1;
+	}
 
-    char szDisplayName[48];
+	char szDisplayName[48];
 
-    if(!GetSkinDisplayNameBySkinNum(iSkinNum, szDisplayName, sizeof(szDisplayName)))
-    {
-       return false; 
-    }
+	if(!GetSkinDisplayNameBySkinNum(iSkinNum, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
 
-    return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_IsNativeSkin(Handle hPlugin, int iNumParams)
 {
-    int iSkinNum = GetNativeCell(1);
-    int iItemNum = GetNativeCell(2);
-    int iItemType = GetNativeCell(3);
+	int iSkinNum = GetNativeCell(1);
+	int iItemNum = GetNativeCell(2);
+	int iItemType = GetNativeCell(3);
 
-    if(iItemType < 0 || iItemType > 1)
-    {
-        return false;
-    }
-    
-    return IsNativeSkin(iSkinNum, iItemNum, iItemType);
+	if(iItemType < 0 || iItemType > 1)
+	{
+		return false;
+	}
+	
+	return IsNativeSkin(iSkinNum, iItemNum, iItemType);
+}
+
+public int Native_IsNativeSkinByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iSkinDefIndex = GetNativeCell(1);
+	int iItemDefIndex = GetNativeCell(2);
+	int iItemType = GetNativeCell(3);
+
+	if(iItemType < 0 || iItemType > 1)
+	{
+		return false;
+	}
+	
+	return IsNativeSkinByDefIndex(iSkinDefIndex, iItemDefIndex, iItemType);
 }
 
 public int Native_GetGlovesNumByDefIndex(Handle hPlugin, int iNumParams)
 {
-    int iDefIndex = GetNativeCell(1);
+	int iDefIndex = GetNativeCell(1);
 
-    if(g_arGlovesNum.FindValue(iDefIndex) == -1)
-    {
-        return -1;
-    }
-    return GetGlovesNumByDefIndex(iDefIndex);
+	if(g_arGlovesNum.FindValue(iDefIndex) == -1)
+	{
+		return -1;
+	}
+	return GetGlovesNumByDefIndex(iDefIndex);
 }
 
 public int Native_GetGlovesDefIndexByGlovesNum(Handle hPlugin, int iNumParams)
 {
-    int iSkinNum = GetNativeCell(1);
+	int iSkinNum = GetNativeCell(1);
 
-    if(g_iGlovesCount < iSkinNum)
-    {
-        return -1;
-    }
-    return GetGlovesDefIndexByGlovesNum(iSkinNum);
+	if(g_iGlovesCount < iSkinNum)
+	{
+		return -1;
+	}
+	return GetGlovesDefIndexByGlovesNum(iSkinNum);
 }
 
 public int Native_GetGlovesDisplayNameByDefIndex(Handle hPlugin, int iNumParams)
 {
-    int iDefIndex = GetNativeCell(1);
+	int iDefIndex = GetNativeCell(1);
 
-    if(g_arGlovesNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	if(g_arGlovesNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    char szDisplayName[48];
+	char szDisplayName[48];
 
-    if(!GetGlovesDisplayNameByDefIndex(iDefIndex, szDisplayName, sizeof(szDisplayName)))
-    {
-       return false; 
-    }
+	if(!GetGlovesDisplayNameByDefIndex(iDefIndex, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
 
-    return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetGlovesDisplayNameByGlovesNum(Handle hPlugin, int iNumParams)
 {
-    int iGloveNum = GetNativeCell(1);
+	int iGloveNum = GetNativeCell(1);
 
-    if(g_iGlovesCount < iGloveNum)
-    {
-        return -1;
-    }
+	if(g_iGlovesCount < iGloveNum)
+	{
+		return -1;
+	}
 
-    char szDisplayName[48];
+	char szDisplayName[48];
 
-    if(!GetGlovesDisplayNameByGlovesNum(iGloveNum, szDisplayName, sizeof(szDisplayName)))
-    {
-       return false; 
-    }
+	if(!GetGlovesDisplayNameByGlovesNum(iGloveNum, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
 
-    return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetGlovesViewModelByGlovesNum(Handle plugin, int numParams)
 {
-    int iGloveNum = GetNativeCell(1);
+	int iGloveNum = GetNativeCell(1);
 
-    if(g_iGlovesCount < iGloveNum)
-    {
-        return -1;
-    }
-    char szWorldModel[PLATFORM_MAX_PATH];
+	if(g_iGlovesCount < iGloveNum)
+	{
+		return -1;
+	}
+	char szWorldModel[PLATFORM_MAX_PATH];
 
-    if(!GetGlovesViewModelByGlovesNum(iGloveNum, szWorldModel, sizeof(szWorldModel)))
-    {
-        return false;
-    }
+	if(!GetGlovesViewModelByGlovesNum(iGloveNum, szWorldModel, sizeof(szWorldModel)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetGlovesViewModelByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arGlovesNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arGlovesNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    char szWorldModel[PLATFORM_MAX_PATH];
+	char szWorldModel[PLATFORM_MAX_PATH];
 
-    if(!GetGlovesViewModelByDefIndex(iDefIndex, szWorldModel, sizeof(szWorldModel)))
-    {
-        return false;
-    }
+	if(!GetGlovesViewModelByDefIndex(iDefIndex, szWorldModel, sizeof(szWorldModel)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetGlovesWorldModelByGlovesNum(Handle plugin, int numParams)
 {
-    int iGloveNum = GetNativeCell(1);
+	int iGloveNum = GetNativeCell(1);
 
-    if(g_iGlovesCount < iGloveNum)
-    {
-        return -1;
-    }
-    char szWorldModel[PLATFORM_MAX_PATH];
+	if(g_iGlovesCount < iGloveNum)
+	{
+		return -1;
+	}
+	char szWorldModel[PLATFORM_MAX_PATH];
 
-    if(!GetGlovesWorldModelByGlovesNum(iGloveNum, szWorldModel, sizeof(szWorldModel)))
-    {
-        return false;
-    }
+	if(!GetGlovesWorldModelByGlovesNum(iGloveNum, szWorldModel, sizeof(szWorldModel)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetGlovesWorldModelByDefIndex(Handle plugin, int numParams)
 {
-    int iDefIndex = GetNativeCell(1);
-    if(g_arGlovesNum.FindValue(iDefIndex) == -1)
-    {
-        return false;
-    }
+	int iDefIndex = GetNativeCell(1);
+	if(g_arGlovesNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
 
-    char szWorldModel[PLATFORM_MAX_PATH];
+	char szWorldModel[PLATFORM_MAX_PATH];
 
-    if(!GetGlovesWorldModelByDefIndex(iDefIndex, szWorldModel, sizeof(szWorldModel)))
-    {
-        return false;
-    }
+	if(!GetGlovesWorldModelByDefIndex(iDefIndex, szWorldModel, sizeof(szWorldModel)))
+	{
+		return false;
+	}
 
-    return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
+	return SetNativeString(2, szWorldModel, GetNativeCell(3)) == SP_ERROR_NONE;
 }
 
 public int Native_GetGlovesNumBySkinNum(Handle plugin, int numParams)
 {
-    int iSkinNum = GetNativeCell(1);
+	int iSkinNum = GetNativeCell(1);
 
-    if(g_iPaintsCount < iSkinNum)
-    {
-        return -1;
-    }
+	if(g_iPaintsCount < iSkinNum)
+	{
+		return -1;
+	}
 
-    return GetGlovesNumBySkinNum(iSkinNum);
+	return GetGlovesNumBySkinNum(iSkinNum);
+}
+	/*      Music Kits      */
+
+public int Native_GetMusicKitNumByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+
+	if(g_arMusicKitsNum.FindValue(iDefIndex) == -1)
+	{
+		return -1;
+	}
+	return GetMusicKitNumByDefIndex(iDefIndex);
 }
 
+public int Native_GetMusicKitDefIndexByMusicKitNum(Handle hPlugin, int iNumParams)
+{
+	int iMusicKitNum = GetNativeCell(1);
 
+	if(g_iMusicKitsCount < iMusicKitNum)
+	{
+		return -1;
+	}
+	return GetMusicKitDefIndexByMusicKitNum(iMusicKitNum);
+}
+
+public int Native_GetMusicKitDisplayNameByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+
+	if(g_arMusicKitsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetMusicKitDisplayNameByDefIndex(iDefIndex, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetMusicKitDisplayNameByMusicKitNum(Handle hPlugin, int iNumParams)
+{
+	int iMusicKitNum = GetNativeCell(1);
+
+	if(g_iMusicKitsCount < iMusicKitNum)
+	{
+		return -1;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetMusicKitDisplayNameByMusicKitNum(iMusicKitNum, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+	/*      Pins      */
+
+public int Native_GetPinNumByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+
+	if(g_arPinsNum.FindValue(iDefIndex) == -1)
+	{
+		return -1;
+	}
+	return GetPinNumByDefIndex(iDefIndex);
+}
+
+public int Native_GetPinDefIndexByPinNum(Handle hPlugin, int iNumParams)
+{
+	int iPinNum = GetNativeCell(1);
+
+	if(g_iPinsCount < iPinNum)
+	{
+		return -1;
+	}
+	return GetPinDefIndexByPinNum(iPinNum);
+}
+
+public int Native_GetPinDisplayNameByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+
+	if(g_arPinsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetPinDisplayNameByDefIndex(iDefIndex, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetPinDisplayNameByPinNum(Handle hPlugin, int iNumParams)
+{
+	int iPinNum = GetNativeCell(1);
+
+	if(g_iPinsCount < iPinNum)
+	{
+		return -1;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetPinDisplayNameByPinNum(iPinNum, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+	/*      Patches      */
+public int Native_GetPatchNumByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+
+	if(g_arPatchNum.FindValue(iDefIndex) == -1)
+	{
+		return -1;
+	}
+	return GetPatchNumByDefIndex(iDefIndex);
+}
+
+public int Native_GetPatchDefIndexByPatchNum(Handle hPlugin, int iNumParams)
+{
+	int iPatchNum = GetNativeCell(1);
+
+	if(g_iPatchesCount < iPatchNum)
+	{
+		return -1;
+	}
+	return GetPatchDefIndexByPatchNum(iPatchNum);
+}
+
+public int Native_GetPatchDisplayNameByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+
+	if(g_arPatchNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetPatchDisplayNameByDefIndex(iDefIndex, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetPatchDisplayNameByPatchNum(Handle hPlugin, int iNumParams)
+{
+	int iPatchNum = GetNativeCell(1);
+
+	if(g_iPatchesCount < iPatchNum)
+	{
+		return -1;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetPatchDisplayNameByPatchNum(iPatchNum, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+	/*      Crates      */
+public int Native_GetCratesNumByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+
+	if(g_arCratesNum.FindValue(iDefIndex) == -1)
+	{
+		return -1;
+	}
+	return GetCratesNumByDefIndex(iDefIndex);
+}
+
+public int Native_GetCratesDefIndexByCratesNum(Handle hPlugin, int iNumParams)
+{
+	int iCratesNum = GetNativeCell(1);
+
+	if(g_iCratesCount < iCratesNum)
+	{
+		return -1;
+	}
+	return GetCratesDefIndexByCratesNum(iCratesNum);
+}
+
+public int Native_GetCratesDisplayNameByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+
+	if(g_arCratesNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetCratesDisplayNameByDefIndex(iDefIndex, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetCratesDisplayNameByCratesNum(Handle hPlugin, int iNumParams)
+{
+	int iCratesNum = GetNativeCell(1);
+
+	if(g_iCratesCount < iCratesNum)
+	{
+		return -1;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetCratesDisplayNameByCratesNum(iCratesNum, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetCratesViewModelByCratesNum(Handle hPlugin, int iNumParams)
+{
+	int iCratesNum = GetNativeCell(1);
+
+	if(g_iCratesCount < iCratesNum)
+	{
+		return -1;
+	}
+	char szViewModel[PLATFORM_MAX_PATH];
+
+	if(!GetCratesViewModelByCratesNum(iCratesNum, szViewModel, sizeof(szViewModel)))
+	{
+		return false;
+	}
+
+	return SetNativeString(2, szViewModel, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetCratesViewModelByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+	if(g_arCratesNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
+
+	char szViewModel[PLATFORM_MAX_PATH];
+
+	if(!GetCratesViewModelByDefIndex(iDefIndex, szViewModel, sizeof(szViewModel)))
+	{
+		return false;
+	}
+
+	return SetNativeString(2, szViewModel, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+	/*      Sprayes      */
+public int Native_GetSprayNumByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+
+	if(g_arSprayNum.FindValue(iDefIndex) == -1)
+	{
+		return -1;
+	}
+	return GetSprayNumByDefIndex(iDefIndex);
+}
+
+public int Native_GetSprayDefIndexBySprayNum(Handle hPlugin, int iNumParams)
+{
+	int iSprayNum = GetNativeCell(1);
+
+	if(g_iSprayesCount < iSprayNum)
+	{
+		return -1;
+	}
+	return GetSprayDefIndexBySprayNum(iSprayNum);
+}
+
+public int Native_GetSprayDisplayNameByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+
+	if(g_arSprayNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetSprayDisplayNameByDefIndex(iDefIndex, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetSprayDisplayNameBySprayNum(Handle hPlugin, int iNumParams)
+{
+	int iSprayNum = GetNativeCell(1);
+
+	if(g_iSprayesCount < iSprayNum)
+	{
+		return -1;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetSprayDisplayNameBySprayNum(iSprayNum, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetSprayMaterialBySprayNum(Handle hPlugin, int iNumParams)
+{
+	int iSprayNum = GetNativeCell(1);
+
+	if(g_iSprayesCount < iSprayNum)
+	{
+		return -1;
+	}
+	char szMaterial[PLATFORM_MAX_PATH];
+
+	if(!GetSprayMaterialBySprayNum(iSprayNum, szMaterial, sizeof(szMaterial)))
+	{
+		return false;
+	}
+
+	return SetNativeString(2, szMaterial, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetSprayMaterialByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+	if(g_arSprayNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
+
+	char szMaterial[PLATFORM_MAX_PATH];
+
+	if(!GetSprayMaterialByDefIndex(iDefIndex, szMaterial, sizeof(szMaterial)))
+	{
+		return false;
+	}
+
+	return SetNativeString(2, szMaterial, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+	/*      Coins      */
+
+
+public int Native_GetCoinSetIdByCoinSetNum(Handle hPlugin, int iNumParams)
+{
+	int iCoinSetNum = GetNativeCell(1);
+
+	if(g_iCoinsSetsCount < iCoinSetNum)
+	{
+		return -1;
+	}
+	return GetCoinSetIdByCoinSetNum(iCoinSetNum);
+}
+
+public int Native_GetCoinSetNumByCoinSetId(Handle hPlugin, int iNumParams)
+{
+	int iCoinSetId = GetNativeCell(1);
+
+	if(g_arCoinsSetsNum.FindValue(iCoinSetId) == -1)
+	{
+		return -1;
+	}
+	return GetCoinSetNumByCoinSetId(iCoinSetId);
+}
+
+public int Native_GetCoinSetDisplayNameByCoinSetNum(Handle hPlugin, int iNumParams)
+{
+	int iCoinSetNum = GetNativeCell(1);
+
+	if(g_iCoinsSetsCount < iCoinSetNum)
+	{
+		return -1;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetCoinSetDisplayNameByCoinSetNum(iCoinSetNum, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetCoinSetDisplayNameByCoinSetId(Handle hPlugin, int iNumParams)
+{
+	int iCoinSetId = GetNativeCell(1);
+
+	if(g_arCoinsSetsNum.FindValue(iCoinSetId) == -1)
+	{
+		return false;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetCoinSetDisplayNameByCoinSetId(iCoinSetId, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetCoinDefIndexByCoinNum(Handle hPlugin, int iNumParams)
+{
+	int iCoinNum = GetNativeCell(1);
+
+	if(g_iCoinsCount < iCoinNum)
+	{
+		return -1;
+	}
+	return GetCoinDefIndexByCoinNum(iCoinNum);
+}
+
+public int Native_GetCoinNumByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+
+	if(g_arCoinsNum.FindValue(iDefIndex) == -1)
+	{
+		return -1;
+	}
+	return GetCoinNumByDefIndex(iDefIndex);
+}
+
+public int Native_GetCoinDisplayNameByCoinNum(Handle hPlugin, int iNumParams)
+{
+	int iCoinNum = GetNativeCell(1);
+
+	if(g_iCoinsCount < iCoinNum)
+	{
+		return -1;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetCoinDisplayNameByCoinNum(iCoinNum, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetCoinDisplayNameByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+
+	if(g_arCoinsNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetCoinDisplayNameByDefIndex(iDefIndex, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_IsCoinInSet(Handle hPlugin, int iNumParams)
+{
+	int iCoinNum = GetNativeCell(1);
+	int iCoinSetId = GetNativeCell(2);
+
+	if(iCoinNum < 0 || iCoinSetId < 0)
+	{
+		return false;
+	}
+	
+	return IsCoinInSet(iCoinNum, iCoinSetId);
+}
+	/*      Stickers      */
+
+
+public int Native_GetStickerSetIdByStickerSetNum(Handle hPlugin, int iNumParams)
+{
+	int iStickerSetNum = GetNativeCell(1);
+
+	if(g_iStickersSetsCount < iStickerSetNum)
+	{
+		return -1;
+	}
+	return GetStickerSetIdByStickerSetNum(iStickerSetNum);
+}
+
+public int Native_GetStickerSetNumByStickerSetId(Handle hPlugin, int iNumParams)
+{
+	int iStickerSetId = GetNativeCell(1);
+
+	if(g_arStickersSetsNum.FindValue(iStickerSetId) == -1)
+	{
+		return -1;
+	}
+	return GetStickerSetNumByStickerSetId(iStickerSetId);
+}
+
+public int Native_GetStickerSetDisplayNameByStickerSetNum(Handle hPlugin, int iNumParams)
+{
+	int iStickerSetNum = GetNativeCell(1);
+
+	if(g_iStickersSetsCount < iStickerSetNum)
+	{
+		return -1;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetStickerSetDisplayNameByStickerSetNum(iStickerSetNum, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetStickerSetDisplayNameByStickerSetId(Handle hPlugin, int iNumParams)
+{
+	int iStickerSetId = GetNativeCell(1);
+
+	if(g_arStickersSetsNum.FindValue(iStickerSetId) == -1)
+	{
+		return false;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetStickerSetDisplayNameByStickerSetId(iStickerSetId, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetStickerDefIndexByStickerNum(Handle hPlugin, int iNumParams)
+{
+	int iStickerNum = GetNativeCell(1);
+
+	if(g_iStickersCount < iStickerNum)
+	{
+		return -1;
+	}
+	return GetStickerDefIndexByStickerNum(iStickerNum);
+}
+
+public int Native_GetStickerNumByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+
+	if(g_arStickersNum.FindValue(iDefIndex) == -1)
+	{
+		return -1;
+	}
+	return GetStickerNumByDefIndex(iDefIndex);
+}
+
+public int Native_GetStickerDisplayNameByStickerNum(Handle hPlugin, int iNumParams)
+{
+	int iStickerNum = GetNativeCell(1);
+
+	if(g_iStickersCount < iStickerNum)
+	{
+		return -1;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetStickerDisplayNameByStickerNum(iStickerNum, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_GetStickerDisplayNameByDefIndex(Handle hPlugin, int iNumParams)
+{
+	int iDefIndex = GetNativeCell(1);
+
+	if(g_arStickersNum.FindValue(iDefIndex) == -1)
+	{
+		return false;
+	}
+
+	char szDisplayName[48];
+
+	if(!GetStickerDisplayNameByDefIndex(iDefIndex, szDisplayName, sizeof(szDisplayName)))
+	{
+	   return false; 
+	}
+
+	return SetNativeString(2, szDisplayName, GetNativeCell(3)) == SP_ERROR_NONE;
+}
+
+public int Native_IsStickerInSet(Handle hPlugin, int iNumParams)
+{
+	int iStickerNum = GetNativeCell(1);
+	int iStickerSetId = GetNativeCell(2);
+
+	if(iStickerNum < 0 || iStickerSetId < 0)
+	{
+		return false;
+	}
+	
+	return IsStickerInSet(iStickerNum, iStickerSetId);
+}
