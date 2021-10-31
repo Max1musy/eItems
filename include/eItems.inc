@@ -76,6 +76,13 @@
 native int      eItems_GetWeaponCount();
 native int      eItems_GetPaintsCount();
 native int      eItems_GetGlovesCount();
+native int      eItems_GetMusicKitsCount();
+native int      eItems_GetPinsCount();
+native int      eItems_GetCoinsCount();
+native int      eItems_GetCoinsSetsCount();
+native int      eItems_GetStickersCount();
+native int      eItems_GetStickersSetsCount();
+
 
 
 native bool     eItems_AreItemsSynced();
@@ -87,7 +94,7 @@ forward void    eItems_OnWeaponGiven(const int client, const int iWeapon, const 
 
 /*              Weapons             */
 
-    /*     Generic     */
+	/*     Generic     */
 
 native int      eItems_GetWeaponNumByDefIndex(int iDefIndex);
 native int      eItems_GetWeaponNumByClassName(const char[] szClassName);
@@ -107,10 +114,10 @@ native int      eItems_FindWeaponByClassName(int client, const char[] szClassNam
 native bool     eItems_RefillClipAmmo(int iWeapon);
 native bool     eItems_RefillReserveAmmo(int iWeapon);
 native bool     eItems_IsValidWeapon(int iWeapon);
-native int      eItems_GiveWeapon(int client, const char[] szClassName, int iReserveAmmo = -1, int iClipAmmo = -1, int iSwitchTo = -1);
+native int      eItems_GiveWeapon(int client, const char[] szClassName, int iReserveAmmo = -1, int iClipAmmo = -1, int iSwitchTo = -1, bool bSwitchAnimation = true);
 native bool     eItems_RemoveKnife(int client);
 native bool     eItems_RemoveWeapon(int client, int iWeapon);
-native int      eItems_RespawnWeapon(int client, int iWeapon);
+native int      eItems_RespawnWeapon(int client, int iWeapon, bool bSwitchAnimation = true);
 native int      eItems_RespawnWeaponBySlot(int client, int iWeaponSlot);
 native int      eItems_RemoveAllWeapons(int client, int iSkipSlot = -1);
 native bool     eItems_SetWeaponAmmo(int iWeapon, int iReserveAmmo = -1, int iClipAmmo = -1);
@@ -118,104 +125,113 @@ native bool     eItems_SetAllWeaponsAmmoByClassName(const char[] szClassName, in
 native bool     eItems_SetAllWeaponsAmmo(int iReserveAmmo = -1, int iClipAmmo = -1);
 native bool     eItems_SetActiveWeapon(int client, int iWeapon);
 native bool     eItems_DropWeapon(int client, int iWeapon);
+native bool     eItems_HasRareInspectByDefIndex(int iWeaponDefIndex);
+native bool     eItems_HasRareDrawByDefIndex(int iWeaponDefIndex);
+native int      eItems_GetRareInspectSequenceByDefIndex(int iWeaponDefIndex);
+native int      eItems_GetRareDrawSequenceByDefIndex(int iWeaponDefIndex);
 
-    /*  ClassNames  */
+	/*  ClassNames  */
 
 native bool     eItems_GetWeaponClassNameByWeaponNum(int iWeaponNum, char[] szBuffer, int iLength);
 native bool     eItems_GetWeaponClassNameByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
 native bool     eItems_GetWeaponClassNameByWeapon(int iWeapon, char[] szBuffer, int iLength);
 
-    /*  DisplayNames    */
+	/*  DisplayNames    */
 
 native bool     eItems_GetWeaponDisplayNameByWeaponNum(int iWeaponNum, char[] szBuffer, int iLength);
 native bool     eItems_GetWeaponDisplayNameByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
 native bool     eItems_GetWeaponDisplayNameByWeapon(int iWeapon, char[] szBuffer, int iLength);
 native bool     eItems_GetWeaponDisplayNameByClassName(const char[] szClassName, char[] szBuffer, int iLength);
 
-    /*    ViewModel     */
+	/*    ViewModel     */
 
 native bool     eItems_GetWeaponViewModelByWeaponNum(int iWeaponNum, char[] szBuffer, int iLength);
 native bool     eItems_GetWeaponViewModelByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
 native bool     eItems_GetWeaponViewModelByWeapon(int iWeapon, char[] szBuffer, int iLength);
 native bool     eItems_GetWeaponViewModelByClassName(const char[] szClassName, char[] szBuffer, int iLength);
 
-    /*    WorldModel     */
+	/*    WorldModel     */
 
 native bool     eItems_GetWeaponWorldModelByWeaponNum(int iWeaponNum, char[] szBuffer, int iLength);
 native bool     eItems_GetWeaponWorldModelByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
 native bool     eItems_GetWeaponWorldModelByWeapon(int iWeapon, char[] szBuffer, int iLength);
 native bool     eItems_GetWeaponWorldModelByClassName(const char[] szClassName, char[] szBuffer, int iLength);
 
-    /*     Slot     */
+	/*     Slot     */
 
 native int      eItems_GetWeaponSlotByWeaponNum(int iWeaponNum);
 native int      eItems_GetWeaponSlotByDefIndex(int iDefIndex);
 native int      eItems_GetWeaponSlotByWeapon(int iWeapon);
 native int      eItems_GetWeaponSlotByClassName(const char[] szClassName);
 
-    /*     Team     */
+	/*     Team     */
 
 native int      eItems_GetWeaponTeamByWeaponNum(int iWeaponNum);
 native int      eItems_GetWeaponTeamByDefIndex(int iDefIndex);
 native int      eItems_GetWeaponTeamByWeapon(int iWeapon);
 native int      eItems_GetWeaponTeamByClassName(const char[] szClassName);
 
-    /*     Clip Ammo     */
+	/*     Clip Ammo     */
 
 native int      eItems_GetWeaponClipAmmoByWeaponNum(int iWeaponNum);
 native int      eItems_GetWeaponClipAmmoByDefIndex(int iDefIndex);
 native int      eItems_GetWeaponClipAmmoByWeapon(int iWeapon);
 native int      eItems_GetWeaponClipAmmoByClassName(const char[] szClassName);
 
-    /*     Reserve Ammo     */
+	/*     Reserve Ammo     */
 
 native int      eItems_GetWeaponReserveAmmoByWeaponNum(int iWeaponNum);
 native int      eItems_GetWeaponReserveAmmoByDefIndex(int iDefIndex);
 native int      eItems_GetWeaponReserveAmmoByWeapon(int iWeapon);
 native int      eItems_GetWeaponReserveAmmoByClassName(const char[] szClassName);
 
-    /*     Price     */
+	/*     Price     */
 
 native int      eItems_GetWeaponPriceByWeaponNum(int iWeaponNum);
 native int      eItems_GetWeaponPriceByDefIndex(int iDefIndex);
 native int      eItems_GetWeaponPriceByWeapon(int iWeapon);
 native int      eItems_GetWeaponPriceByClassName(const char[] szClassName);
 
-    /*     Max Player Speed     */
+	/*     Max Player Speed     */
 
 native int      eItems_GetWeaponMaxPlayerSpeedByWeaponNum(int iWeaponNum);
 native int      eItems_GetWeaponMaxPlayerSpeedByDefIndex(int iDefIndex);
 native int      eItems_GetWeaponMaxPlayerSpeedByWeapon(int iWeapon);
 native int      eItems_GetWeaponMaxPlayerSpeedByClassName(const char[] szClassName);
 
-    /*     Damage     */
+	/*     Damage     */
 
 native int      eItems_GetWeaponDamageByWeaponNum(int iWeaponNum);
 native int      eItems_GetWeaponDamageByDefIndex(int iDefIndex);
 native int      eItems_GetWeaponDamageByWeapon(int iWeapon);
 native int      eItems_GetWeaponDamageByClassName(const char[] szClassName);
 
-    /*     Full Auto     */
+	/*     Full Auto     */
 
 native bool     eItems_IsWeaponFullAutoByWeaponNum(int iWeaponNum);
 native bool     eItems_IsWeaponFullAutoByDefIndex(int iDefIndex);
 native bool     eItems_IsWeaponFullAutoByWeapon(int iWeapon);
 native bool     eItems_IsWeaponFullAutoByClassName(const char[] szClassName);
 
-    /*     Spread     */
+	/*     Spread     */
 
 native float    eItems_GetWeaponSpreadByWeaponNum(int iWeaponNum);
 native float    eItems_GetWeaponSpreadByDefIndex(int iDefIndex);
 native float    eItems_GetWeaponSpreadByWeapon(int iWeapon);
 native float    eItems_GetWeaponSpreadByClassName(const char[] szClassName);
 
-    /*     Cycle Time     */
+	/*     Cycle Time     */
 
 native float    eItems_GetWeaponCycleTimeByWeaponNum(int iWeaponNum);
 native float    eItems_GetWeaponCycleTimeByDefIndex(int iDefIndex);
 native float    eItems_GetWeaponCycleTimeByWeapon(int iWeapon);
 native float    eItems_GetWeaponCycleTimeByClassName(const char[] szClassName);
 
+	/*     Stickers Slots     */
+
+native int      eItems_GetWeaponStickersSlotsByWeaponNum(int iWeaponNum);
+native int      eItems_GetWeaponStickersSlotsByDefIndex(int iDefIndex);
+native int      eItems_GetWeaponStickersSlotsByWeapon(int iWeapon);
 
 /*              Skins             */
 
@@ -225,6 +241,7 @@ native int      eItems_GetSkinDefIndexBySkinNum(int iSkinNum);
 native bool     eItems_GetSkinDisplayNameByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
 native bool     eItems_GetSkinDisplayNameBySkinNum(int iSkinNum, char[] szBuffer, int iLength);
 native bool     eItems_IsNativeSkin(int iSkinNum, int iItemNum, int iItemType);
+native bool     eItems_IsNativeSkinByDefIndex(int iSkinDefIndex, int iItemDefIndex, int iItemType);
 
 /*              Gloves             */
 
@@ -239,3 +256,70 @@ native bool     eItems_GetGlovesWorldModelByGlovesNum(int iGlovesNum, char[] szB
 native bool     eItems_GetGlovesWorldModelByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
 native int      eItems_GetGlovesNumBySkinNum(int iSkinNum);
 
+
+/*              MusicKits             */
+
+native int      eItems_GetMusicKitNumByDefIndex(int iDefIndex);
+native int      eItems_GetMusicKitDefIndexByMusicKitNum(int iMusicKitNum);
+native bool     eItems_GetMusicKitDisplayNameByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
+native bool     eItems_GetMusicKitDisplayNameByMusicKitNum(int iMusicKitNum, char[] szBuffer, int iLength);
+
+/*              Pins             */
+
+native int      eItems_GetPinNumByDefIndex(int iDefIndex);
+native int      eItems_GetPinDefIndexByPinNum(int iPinNum);
+native bool     eItems_GetPinDisplayNameByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
+native bool     eItems_GetPinDisplayNameByPinNum(int iPinNum, char[] szBuffer, int iLength);
+
+/*              Patches             */
+
+native int      eItems_GetPatchNumByDefIndex(int iDefIndex);
+native int      eItems_GetPatchDefIndexByPatchNum(int iPatchNum);
+native bool     eItems_GetPatchDisplayNameByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
+native bool     eItems_GetPatchDisplayNameByPatchNum(int iPatchNum, char[] szBuffer, int iLength);
+
+/*              Crates             */
+
+native int      eItems_GetCratesNumByDefIndex(int iDefIndex);
+native int      eItems_GetCratesDefIndexByCratesNum(int iCratesNum);
+native bool     eItems_GetCratesDisplayNameByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
+native bool     eItems_GetCratesDisplayNameByCratesNum(int iCratesNum, char[] szBuffer, int iLength);
+native bool     eItems_GetCratesViewModelByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
+native bool     eItems_GetCratesViewModelByCratesNum(int iCratesNum, char[] szBuffer, int iLength);
+
+/*              Sprayes             */
+
+native int      eItems_GetSprayNumByDefIndex(int iDefIndex);
+native int      eItems_GetSprayDefIndexBySprayNum(int iSprayNum);
+native bool     eItems_GetSprayDisplayNameByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
+native bool     eItems_GetSprayDisplayNameBySprayNum(int iSprayNum, char[] szBuffer, int iLength);
+native bool     eItems_GetSprayMaterialByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
+native bool     eItems_GetSprayMaterialBySprayNum(int iSprayNum, char[] szBuffer, int iLength);
+
+/*              Coins             */
+
+native int      eItems_GetCoinSetIdByCoinSetNum(int iCoinSetNum);
+native int      eItems_GetCoinSetNumByCoinSetId(int iCoinSetId);
+native bool     eItems_GetCoinSetDisplayNameByCoinSetId(int iCoinSetId, char[] szBuffer, int iLength);
+native bool     eItems_GetCoinSetDisplayNameByCoinSetNum(int iCoinSetNum, char[] szBuffer, int iLength);
+
+native int      eItems_GetCoinDefIndexByCoinNum(int iCoinNum);
+native int      eItems_GetCoinNumByDefIndex(int iDefIndex);
+native bool     eItems_GetCoinDisplayNameByCoinNum(int iCoinNum, char[] szBuffer, int iLength);
+native bool     eItems_GetCoinDisplayNameByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
+
+native bool     eItems_IsCoinInSet(int iCoinNum, int iCoinSetId);
+
+/*              Stickers             */
+
+native int      eItems_GetStickerSetIdByStickerSetNum(int iStickerSetNum);
+native int      eItems_GetStickerSetNumByStickerSetId(int iStickerSetId);
+native bool     eItems_GetStickerSetDisplayNameByStickerSetId(int iStickerSetId, char[] szBuffer, int iLength);
+native bool     eItems_GetStickerSetDisplayNameByStickerSetNum(int iStickerSetNum, char[] szBuffer, int iLength);
+
+native int      eItems_GetStickerDefIndexByStickerNum(int iStickerNum);
+native int      eItems_GetStickerNumByDefIndex(int iDefIndex);
+native bool     eItems_GetStickerDisplayNameByStickerNum(int iStickerNum, char[] szBuffer, int iLength);
+native bool     eItems_GetStickerDisplayNameByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
+
+native bool     eItems_IsStickerInSet(int iStickerNum, int iStickerSetId);
