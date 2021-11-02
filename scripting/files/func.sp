@@ -23,6 +23,21 @@ public int GetPinsCount()
 	return g_iPinsCount;
 }
 
+public int GetPatchesCount()
+{
+	return g_iPatchesCount;
+}
+
+public int GetCratesCount()
+{
+	return g_iCratesCount;
+}
+
+public int GetSprayesCount()
+{
+	return g_iSprayesCount;
+}
+
 public int GetCoinsCount()
 {
 	return g_iCoinsCount;
