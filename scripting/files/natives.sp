@@ -5,6 +5,9 @@ public void CreateNatives()
 	CreateNative("eItems_GetGlovesCount", Native_GetGlovesCount);
 	CreateNative("eItems_GetMusicKitsCount", Native_GetMusicKitsCount);
 	CreateNative("eItems_GetPinsCount", Native_GetPinsCount);
+	CreateNative("eItems_GetPatchesCount", Native_GetPatchesCount);
+	CreateNative("eItems_GetCratesCount", Native_GetCratesCount);
+	CreateNative("eItems_GetSprayesCount", Native_GetSprayesCount);
 	CreateNative("eItems_GetCoinsCount", Native_GetCoinsCount);
 	CreateNative("eItems_GetCoinsSetsCount", Native_GetCoinsSetsCount);
 	CreateNative("eItems_GetStickersCount", Native_GetStickersCount);
@@ -243,6 +246,21 @@ public int Native_GetMusicKitsCount(Handle plugin, int numParams)
 public int Native_GetPinsCount(Handle plugin, int numParams)
 {
 	return GetPinsCount();
+}
+
+public int Native_GetPatchesCount(Handle plugin, int numParams)
+{
+	return GetPatchesCount();
+}
+
+public int Native_GetCratesCount(Handle plugin, int numParams)
+{
+	return GetCratesCount();
+}
+
+public int Native_GetSprayesCount(Handle plugin, int numParams)
+{
+	return GetSprayesCount();
 }
 
 public int Native_GetCoinsCount(Handle plugin, int numParams)
