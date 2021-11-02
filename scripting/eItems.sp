@@ -9,7 +9,7 @@
 
 #define TAG_NCLR "[Max]"
 #define AUTHOR "ESK0 (Original author: SM9) & Max1mus"
-#define VERSION "1.3"
+#define VERSION "1.4"
 
 #include "files/globals.sp"
 #include "files/client.sp"
@@ -73,37 +73,7 @@ public void OnPluginStart()
 	g_arStickersNum         = new ArrayList();
 	g_smStickersSets        = new StringMap();
 	g_smStickersInfo        = new StringMap();
-
-	JSONObject jRoot = new JSONObject();
-	RegAdminCmd("sm_update",Command_Update, ADMFLAG_ROOT);
-	if (!FileExists("addons/sourcemod/data/eItems/eItems.json"))
-	{
-		PrintToServer("%s 未发现eItems.json文件！", TAG_NCLR);
-		GenerateJson();
-	}
-	else
-	{
-		jRoot = JSONObject.FromFile("addons/sourcemod/data/eItems/eItems.json");
-		if (!jRoot.HasKey("Lastest"))
-		{
-			PrintToServer("%s 获取最新更新时间失败！", TAG_NCLR);
-			GenerateJson();
-		}
-		else if (GetFileTime("scripts/items/items_game.txt", FileTime_LastChange) > jRoot.GetInt("Lastest"))
-		{
-			PrintToServer("%s 检测到游戏Items更新！", TAG_NCLR);
-			GenerateJson();
-		}
-		else if (GetFileTime("resource/csgo_schinese.txt", FileTime_LastChange) > jRoot.GetInt("Lastest"))	
-		{
-			PrintToServer("%s 检测到汉化翻译更新！", TAG_NCLR);
-			GenerateJson();
-		}
-		else
-			ParseItems();
-	}
-	delete jRoot;
-
+	
 	HookEvent("player_death",       Event_PlayerDeath);
 	HookEvent("round_poststart",    Event_OnRoundStart);
 	HookEvent("cs_pre_restart",     Event_OnRoundEnd);
@@ -118,6 +88,8 @@ public void OnPluginStart()
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 
 	g_hSwitchWeaponCall = EndPrepSDKCall();
+
+	CreateTimer(3.0, ParseTimer);
 }
 
 public void OnPluginEnd()
@@ -206,4 +178,36 @@ public Action Command_Update(int client ,int args)
 {
 	GenerateJson();
 }
-			
+
+public Action ParseTimer(Handle hdl, any data)
+{
+	JSONObject jRoot = new JSONObject();
+	RegAdminCmd("sm_update",Command_Update, ADMFLAG_ROOT);
+	if (!FileExists("addons/sourcemod/data/eItems/eItems.json"))
+	{
+		PrintToServer("%s 未发现eItems.json文件！", TAG_NCLR);
+		GenerateJson();
+	}
+	else
+	{
+		jRoot = JSONObject.FromFile("addons/sourcemod/data/eItems/eItems.json");
+		if (!jRoot.HasKey("Lastest"))
+		{
+			PrintToServer("%s 获取最新更新时间失败！", TAG_NCLR);
+			GenerateJson();
+		}
+		else if (GetFileTime("scripts/items/items_game.txt", FileTime_LastChange) > jRoot.GetInt("Lastest"))
+		{
+			PrintToServer("%s 检测到游戏Items更新！", TAG_NCLR);
+			GenerateJson();
+		}
+		else if (GetFileTime("resource/csgo_schinese.txt", FileTime_LastChange) > jRoot.GetInt("Lastest"))	
+		{
+			PrintToServer("%s 检测到汉化翻译更新！", TAG_NCLR);
+			GenerateJson();
+		}
+		else
+			ParseItems();
+	}
+	delete jRoot;
+}
