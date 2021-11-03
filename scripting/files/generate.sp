@@ -573,7 +573,7 @@ public void GenerateJson()
 					IndexbyName.GetString(econstr, index, sizeof(index));
 					JSONObject paints = new JSONObject();
 					if (!jTemp.HasKey("paints"))
-						paints.SetString("0", index);
+						paints.SetInt("0", StringToInt(index));
 					else
 					{
 						paints = view_as<JSONObject>(jTemp.Get("paints"));
@@ -603,7 +603,7 @@ public void GenerateJson()
 				IndexbyName.GetString(econstr, index, sizeof(index));
 				JSONObject paints = new JSONObject();
 				if (!jTemp.HasKey("paints"))
-					paints.SetString("0", index);
+					paints.SetInt("0", StringToInt(index));
 				else
 				{
 					paints = view_as<JSONObject>(jTemp.Get("paints"));
