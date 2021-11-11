@@ -170,7 +170,7 @@ public void GenerateJson()
 								if (sc.GetString(split[0], buffer, sizeof(buffer)))
 									Format(buffer, sizeof(buffer), "%s,%s", buffer, index);
 								else
-									Format(buffer, sizeof(buffer), "%s", index);
+									Format(buffer, sizeof(buffer), "%d,%s", sc.Size,index);
 								sc.SetString(split[0], buffer);
 								temp.SetString("item_name", item_name);
 								StickerItems.Push(temp);
@@ -361,7 +361,7 @@ public void GenerateJson()
 						if (cc.GetString(models, buffer, sizeof(buffer)))
 							Format(buffer, sizeof(buffer), "%s,%s", buffer, index);
 						else
-							Format(buffer, sizeof(buffer), "%s", index);
+							Format(buffer, sizeof(buffer), "%d,%s", cc.Size, index);
 						cc.SetString(models, buffer);
 					}
 				}
@@ -377,7 +377,7 @@ public void GenerateJson()
 					jTemp.SetString("item_name", item_name);
 					CoinItems.Push(jTemp);
 					delete jTemp;
-					if(cc.GetString("Valve", buffer, sizeof(buffer)))
+					cc.GetString("Valve", buffer, sizeof(buffer));
 					Format(buffer, sizeof(buffer), "%s,%s", buffer, index);
 					cc.SetString("Valve", buffer);
 				}
@@ -482,6 +482,12 @@ public void GenerateJson()
 	delete kv;
 	for (int i = 0; i <= sc.Size; i++)
 	{
+		JSONObject jTemp = new JSONObject();
+		Stickercategories.Push(jTemp);
+		delete jTemp;
+	}
+	for (int i = 0; i <= sc.Size; i++)
+	{
 		char key[64], split[600][6];
 		JSONObject jTemp = new JSONObject();
 		JSONObject items = new JSONObject();
@@ -489,12 +495,12 @@ public void GenerateJson()
 		{
 			sc.Snapshot().GetKey(i, key, sizeof(key));
 			sc.GetString(key, buffer, sizeof(buffer));
-			jTemp.SetInt("id", i);
-			jTemp.SetString("name", key);
 			int size = ExplodeString(buffer, ",", split, sizeof(split), sizeof(split[]));
-			for (int j = 0; j < size; j++)
+			jTemp.SetInt("id", StringToInt(split[0]));
+			jTemp.SetString("name", key);
+			for (int j = 1; j < size; j++)
 			{
-				IntToString(j, num, sizeof(num));
+				IntToString(j - 1, num, sizeof(num));
 				items.SetInt(num, StringToInt(split[j]));
 			}
 		}
@@ -512,7 +518,7 @@ public void GenerateJson()
 		}
 		jTemp.Set("items", items);
 		delete items;
-		Stickercategories.Push(jTemp);
+		Stickercategories.Set(jTemp.GetInt("id"),jTemp);
 		delete jTemp;
 	}
 	jStickers.Set("categories", Stickercategories);
@@ -521,22 +527,28 @@ public void GenerateJson()
 	delete StickerItems;
 	for (int i = 0; i < cc.Size; i++)
 	{
+		JSONObject jTemp = new JSONObject();
+		Coincategories.Push(jTemp);
+		delete jTemp;
+	}
+	for (int i = 0; i < cc.Size; i++)
+	{
 		char key[64], split[600][6];
 		JSONObject jTemp = new JSONObject();
 		JSONObject items = new JSONObject();
 		cc.Snapshot().GetKey(i, key, sizeof(key));
 		cc.GetString(key, buffer, sizeof(buffer));
-		jTemp.SetInt("id", i);
-		jTemp.SetString("name", key);
 		int size = ExplodeString(buffer, ",", split, sizeof(split), sizeof(split[]));
-		for (int j = 0; j < size; j++)
+		jTemp.SetInt("id", StringToInt(split[0]));
+		jTemp.SetString("name", key);
+		for (int j = 1; j < size; j++)
 		{
-			IntToString(j, num, sizeof(num));
+			IntToString(j - 1, num, sizeof(num));
 			items.SetInt(num, StringToInt(split[j]));
 		}
 		jTemp.Set("items", items);
 		delete items;
-		Coincategories.Push(jTemp);
+		Coincategories.Set(jTemp.GetInt("id"),jTemp);
 		delete jTemp;
 	}
 	jCoin.Set("categories", Coincategories);
