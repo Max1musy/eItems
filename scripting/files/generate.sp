@@ -365,7 +365,7 @@ public void GenerateJson()
 						cc.SetString(models, buffer);
 					}
 				}
-				if (StrContains(models, "season") != -1 || StrEqual(models, "map_token") || StrEqual(models, "prestige_coin"))
+				if (StrContains(models, "season") != -1 || StrEqual(models, "map_token") || StrEqual(models, "prestige_coin") || StrContains(models, "tournament_journal_prefab") != -1)
 				{
 					kv.GetString("item_name", item_name, sizeof(item_name));
 					StringToLow(item_name);
@@ -630,6 +630,8 @@ public void GenerateJson()
 		delete jTemp;
 	}
 	delete econ;
+	
+
 	jRoot.Set("weapons", jWeapons);
 	jRoot.Set("paints", jPaints);
 	jRoot.Set("gloves", jGloves);
@@ -640,6 +642,31 @@ public void GenerateJson()
 	jRoot.Set("patches", jPatches);
 	jRoot.Set("sprayes", jSprayes);
 	jRoot.Set("stickers", jStickers);
+	JSONArray elo = new JSONArray();
+	for(int i = 0;  i <= 18;  i++)
+	{
+		char tempName[32];
+		Format(tempName, sizeof(tempName), "sfui_elo_rankname_%d", i);
+		if (!TransData(tempName, sizeof(tempName), TransCN, TransEN))
+			PrintToServer("%s 未找到翻译(%s)", TAG_NCLR, tempName);
+		elo.PushString( tempName);
+	}
+	jRoot.Set("elo", elo);
+	delete elo;
+	JSONArray xp = new JSONArray();
+	xp.PushString("无");
+	for(int i = 1;  i <= 40;  i++)
+	{
+		char tempName[32];
+		Format(tempName, sizeof(tempName), "sfui_xp_rankname_%d", i);
+		if (!TransData(tempName, sizeof(tempName), TransCN, TransEN))
+			PrintToServer("%s 未找到翻译(%s)", TAG_NCLR, tempName);
+		if (i < 36 && i > 0)
+			Format(tempName, sizeof(tempName), "%s - %d", tempName, i%4 == 0? 4 : i%4);
+		xp.PushString(tempName);
+	}
+	jRoot.Set("xp", xp);
+	delete xp;
 	jRoot.SetInt("Lastest", GetTime());
 	jRoot.ToFile("addons/sourcemod/data/eItems/eItems.json", 4);
 	delete jRoot;
